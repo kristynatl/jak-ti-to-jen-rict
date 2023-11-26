@@ -1,0 +1,26 @@
+.intro__figure {
+  max-height: 250px;
+  max-width: 40vw;
+  position: absolute;
+  bottom: 0;
+}
+
+.intro__bubble {
+  max-width: 50vw;
+  max-height: 70px;
+  position: absolute;
+  top: 0;
+  left: 10vw;
+}
+
+@media screen and (min-width: 420px) {
+  .intro__figure {
+    max-height: 360px;
+  }
+}
+
+@media screen and (min-width: 620px) {
+  .intro__figure {
+    max-height: 450px;
+  }
+}

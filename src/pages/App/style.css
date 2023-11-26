@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@100;200;300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lobster&display=swap');
+
+.container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro {
+  position: relative;
+  height: 260px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.intro__heading {
+  margin: 0;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: x-large;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+  transform: scale(1.3);
+}
+
+.intro__underline {
+  border-bottom: 1px solid black;
+  width: 50%;
+  transform: scale(1.3);
+}
+
+.intro__description {
+  width: 70%;
+  margin-top: 1rem;
+  text-align: center;
+  font-family: 'Alumni Sans', sans-serif;
+  font-size: 1.5rem;
+}
+
+@media screen and (min-width: 420px) {
+  .intro {
+    height: 360px;
+  }
+
+  .intro__info {
+    margin-top: 20%;
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 620px) {
+  .intro {
+    height: 495px;
+  }
+
+  .intro__info {
+    margin-top: 0
+  }
+
+  .intro__heading {
+    font-size: xx-large;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .intro__info {
+    margin-top: 0;
+    max-width: 768px;
+  }
+
+  .intro__underline {
+    margin: 1rem 0
+  }
+
+  .intro__description {
+    font-size: 1.7rem;
+  }
+}
