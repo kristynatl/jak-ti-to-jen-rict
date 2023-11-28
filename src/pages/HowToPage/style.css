@@ -1,0 +1,109 @@
+.how-to {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: 15% 0;
+  padding: 0 15%;
+}
+
+.how-to__section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.how-to__section p {
+  font-family: 'Alumni Sans', sans-serif;
+  font-size: large;
+  text-align: justify;
+  margin: 0.5rem 0;
+  animation: fade-in-on-scroll linear both;
+  animation-timeline: view();
+  animation-range: entry-crossing 25% cover 40%;
+}
+
+.how-to__underline {
+  border-bottom: 1px solid black;
+  width: 80%;
+}
+
+.how-to__tips {
+  padding: 0;
+  margin-top: 0;
+}
+
+.how-to__tip {
+  list-style-type: none;
+}
+
+.how-to__tip h2 {
+  color: #D35F5F;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  animation: fade-in-on-scroll linear;
+  animation-timeline: view();
+  animation-range: entry-crossing 25% cover 30%;
+}
+
+.how-to__figure {
+  max-height: 200px;
+  max-width: 40vw;
+  position: fixed;
+  bottom: 45px;
+}
+
+.left {
+  transform: translateX(-62%);
+}
+
+.right {
+  right: 0;
+  transform: translateX(65%);
+}
+
+@media screen and (min-width: 550px) {
+  .how-to__figure {
+    max-height: 300px;
+    max-width: 40vw;
+    position: fixed;
+    bottom: 45px;
+  }
+}
+
+@media screen and (min-width: 770px) {
+  .how-to {
+    width: 100%;
+    margin-top: 150px;
+    margin-bottom: 80px;
+  }
+
+  .how-to__section {
+    max-width: 800px;
+  }
+
+  .how-to__section p {
+    font-size: x-large;
+  }
+
+  .how-to__underline {
+    border-bottom: 1px solid black;
+    max-width: 550px;
+    margin: 2rem 0
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .how-to__figure {
+    bottom: 20%;
+    max-height: 400px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .how-to__figure {
+    transform: translateX(0);
+  }
+}

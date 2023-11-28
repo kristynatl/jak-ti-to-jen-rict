@@ -1,0 +1,30 @@
+.action-button {
+  background: #FFF;
+  box-shadow: 3px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  border: 1px solid #D35F5F;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: x-large;
+  padding: 0.5rem 0;
+  color: #D35F5F;
+  margin: 1.5rem 0;
+  letter-spacing: 1px;
+  width: 100%;
+}
+
+@media screen and (min-width: 770px) {
+  .action-button {
+    border: none;
+    font-size: xx-large;
+    max-width: 250px;
+    margin: 2rem 0;
+  }
+
+  .action-button:hover,
+  .action-button:focus {
+    background: #D35F5F;
+  }
+
+  .action-button:active {
+    background: black;
+  }
+}

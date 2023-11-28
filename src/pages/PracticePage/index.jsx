@@ -1,9 +1,10 @@
 import { MobileNavigation } from '../../components/MobileNavigation';
+import { DesktopNavigation } from '../../components/DesktopNavigation';
 
 export const PracticePage = () => {
   return (
     <>
-      <h1>NÁCVIK ROZHOVORŮ</h1>
+      <DesktopNavigation />
       <MobileNavigation />
     </>
   );

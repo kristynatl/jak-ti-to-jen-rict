@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { IntroIllustration } from '../../components/IntroIllustration';
 import { MobileNavigation } from '../../components/MobileNavigation';
+import { DesktopNavigation } from '../../components/DesktopNavigation';
 
 export const App = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -14,6 +15,17 @@ export const App = () => {
   return (
     <div className="container">
       <div className="intro">
+        <AnimatePresence>
+          {isVisible && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 2 }}
+            >
+              <DesktopNavigation />
+            </motion.div>
+          )}
+        </AnimatePresence>
         <IntroIllustration />
         <AnimatePresence>
           {isVisible && (

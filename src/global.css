@@ -10,13 +10,42 @@ html {
   font-family: 'Open Sans', sans-serif;
 }
 
-/* .container {
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 80%;
-} */
-
 body {
-  background-color: #f0f0f0;
   margin: 0;
+}
+
+.link {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  width: 70%;
+}
+
+@media screen and (min-width: 770px) {
+
+  .link:hover,
+  .link:focus {
+    color: white;
+
+  }
+
+  .link:active {
+    color: white;
+  }
+}
+
+@keyframes fade-in-on-scroll {
+  0% {
+    opacity: 0;
+    transform: scale(0.8)
+  }
+
+  70% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1)
+  }
 }

@@ -1,0 +1,14 @@
+.how-to__book {
+  max-height: 250px;
+  margin: 1rem 0;
+  animation: fade-in-on-scroll linear both;
+  animation-timeline: view();
+  animation-range: entry-crossing 25% cover 30%;
+}
+
+@media screen and (min-width: 770px) {
+  .how-to__book {
+    max-height: 400px;
+    margin: 3rem 0;
+  }
+}

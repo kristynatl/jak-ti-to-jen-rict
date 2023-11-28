@@ -1,0 +1,53 @@
+.desktop-nav {
+  display: none;
+}
+
+@media screen and (min-width: 550px) {
+  .desktop-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 80px;
+    background-color: white;
+    box-shadow: 3px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    z-index: 1;
+  }
+
+  .desktop-nav__links {
+    display: flex;
+    flex-direction: wrap;
+    align-items: start;
+    gap: 4.5rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    z-index: 2;
+  }
+
+  .desktop-nav__link {
+    text-decoration: none;
+    color: #D35F5F;
+    padding: 0.5rem 0 0.2rem 0;
+  }
+
+  .desktop-nav__link:hover,
+  .desktop-nav__link:focus {
+    border-bottom: 1px solid black
+  }
+
+  .desktop-nav__link:active {
+    color: black;
+    border-bottom: 1px solid black
+  }
+
+}
+
+@media screen and (min-width: 1024px) {
+  .desktop-nav__links {
+    gap: 9rem;
+    font-size: 2rem;
+  }
+}
