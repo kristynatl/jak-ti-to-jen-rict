@@ -22,6 +22,7 @@
   .action-button:hover,
   .action-button:focus {
     background: #D35F5F;
+    color: #FFF;
   }
 
   .action-button:active {

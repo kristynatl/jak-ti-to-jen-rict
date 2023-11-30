@@ -1,23 +1,17 @@
 import './style.css';
 import { motion } from 'framer-motion';
 
-// NEDOKONČENÉ - chci, aby obrázky byly na sobě a postupně se jeden změnil v druhý
-
 export const BookAnimation = () => {
   const imageFadeOutVariants = {
     hidden: {
       opacity: 0,
       transition: {
-        delay: 5,
-        duration: 5,
+        delay: 3,
+        duration: 3,
       },
     },
     visible: {
       opacity: 1,
-    },
-
-    exit: {
-      opacity: 0,
     },
   };
 
@@ -28,20 +22,20 @@ export const BookAnimation = () => {
     visible: {
       opacity: 1,
       transition: {
-        delay: 5,
-        duration: 5,
+        delay: 3,
+        duration: 3,
       },
     },
   };
 
   return (
-    <>
+    <div className="how-to__book-container">
       <motion.img
         variants={imageFadeOutVariants}
         initial="visible"
         whileInView="hidden"
         exit="exit"
-        className="how-to__book"
+        className="how-to__book fade-out"
         src="./pages/HowToPage/img/book.png"
         alt="kniha Děti to chtěj vědět taky"
       />
@@ -53,6 +47,6 @@ export const BookAnimation = () => {
         src="./pages/HowToPage/img/book-hover.png"
         alt="kniha Děti to chtěj vědět taky"
       />
-    </>
+    </div>
   );
 };

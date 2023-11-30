@@ -1,0 +1,67 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: 15% 0;
+  padding: 0 18%;
+}
+
+.about__section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.about__section p {
+  font-family: 'Alumni Sans', sans-serif;
+  font-size: large;
+  text-align: justify;
+  margin: 0.5rem 0;
+}
+
+.about__figure {
+  max-height: 200px;
+  max-width: 40vw;
+  position: fixed;
+  bottom: 45px;
+}
+
+@media screen and (min-width: 550px) {
+  .about__figure {
+    max-height: 300px;
+    max-width: 40vw;
+    position: fixed;
+    bottom: 45px;
+  }
+}
+
+@media screen and (min-width: 770px) {
+  .about {
+    width: 100%;
+    margin-top: 150px;
+    margin-bottom: 80px;
+  }
+
+  .about__section {
+    max-width: 800px;
+  }
+
+  .about__section p {
+    font-size: x-large;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .about__figure {
+    bottom: 20%;
+    max-height: 400px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .about__figure {
+    transform: translateX(0);
+  }
+}
