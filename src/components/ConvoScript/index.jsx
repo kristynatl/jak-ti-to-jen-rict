@@ -13,38 +13,54 @@ export const ConvoScript = () => {
   const convoData = chosenAge.convos.find((convo) => convo.id === scenar);
   const script = convoData.script;
 
-  const [exchangeIndex, setExchangeIndex] = useState(0);
-  const [responseIndex, setResponseIndex] = useState(null);
   const [responsesVisible, setResponsesVisible] = useState(false);
+  const [displayedConvo, setDisplayedConvo] = useState([null]);
 
-  const exchanges = script.slice(0, exchangeIndex + 1);
+  const previousConvo = displayedConvo.slice(0, displayedConvo.length - 1);
 
   const showResponses = () => {
     setResponsesVisible(true);
   };
 
+  const selectResponse = (responseIndex) => {
+    console.log('select', responseIndex);
+    setDisplayedConvo([...previousConvo, responseIndex, null]);
+  };
+
+  console.log(displayedConvo);
+
   return (
     <>
       <div className="convo-script">
-        {exchanges.map((ex, index) => {
+        {displayedConvo.map((exchange, index) => {
           return (
             <>
               <ConvoBubble
                 key={index}
                 speaker="child"
                 status="neutral"
-                content={ex.statement}
+                content={script[index].statement}
               />
-              {responseIndex !== null ? (
-                <ConvoBubble
-                  speaker="adult"
-                  status={
-                    ex.responses[responseIndex].correct
-                      ? 'correct'
-                      : 'incorrect'
-                  }
-                  content={ex.responses[responseIndex].response}
-                />
+              {exchange !== null ? (
+                <>
+                  <ConvoBubble
+                    speaker="adult"
+                    status={
+                      script[index].responses[exchange].correct
+                        ? 'correct'
+                        : 'incorrect'
+                    }
+                    content={script[index].responses[exchange].response}
+                  />
+                  <ResponseFeedback
+                    status={
+                      script[index].responses[exchange].correct
+                        ? 'true'
+                        : 'false'
+                    }
+                    content={script[index].responses[exchange].feedback}
+                  />
+                </>
               ) : null}
             </>
           );
@@ -53,18 +69,21 @@ export const ConvoScript = () => {
         {responsesVisible === false ? (
           <ActionButton label="Zobrazit reakce" onClick={showResponses} />
         ) : (
-          exchanges[exchangeIndex].responses.map((resp, index) => {
+          script[displayedConvo.length - 1].responses.map((resp, index) => {
             return (
-              <ResponseOption
-                key={index}
-                order={index + 1}
-                response={resp.response}
-              />
+              <>
+                <ResponseOption
+                  key={index}
+                  order={index + 1}
+                  response={resp.response}
+                  onClick={() => {
+                    selectResponse(index);
+                  }}
+                />
+              </>
             );
           })
         )}
-
-        <ResponseFeedback status="true" content="Toto je zelený feedback" />
       </div>
 
       <img

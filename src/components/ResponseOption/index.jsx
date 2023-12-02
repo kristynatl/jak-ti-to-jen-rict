@@ -1,7 +1,7 @@
 import './style.css';
 import { motion } from 'framer-motion';
 
-export const ResponseOption = ({ order, response }) => {
+export const ResponseOption = ({ order, response, onClick }) => {
   const buttonVariants = {
     hover: {
       scale: 1.1,
@@ -18,6 +18,7 @@ export const ResponseOption = ({ order, response }) => {
       whileHover="hover"
       whileTap="active"
       className="response__option"
+      onClick={onClick}
     >
       <span>{order}.</span> {response}
     </motion.button>
