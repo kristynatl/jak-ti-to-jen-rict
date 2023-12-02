@@ -1,7 +1,7 @@
 import './style.css';
 import { motion } from 'framer-motion';
 
-export const ActionButton = ({ label }) => {
+export const ActionButton = ({ label, onClick }) => {
   const buttonVariants = {
     hover: {
       scale: 1.1,
@@ -18,6 +18,7 @@ export const ActionButton = ({ label }) => {
       whileHover="hover"
       whileTap="active"
       className="action-button"
+      onClick={onClick}
     >
       {label}
     </motion.button>

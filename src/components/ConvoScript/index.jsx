@@ -1,5 +1,6 @@
 import './style.css';
 import { ResponseOption } from '../ResponseOption';
+import { ActionButton } from '../ActionButton';
 import { ConvoBubble } from '../ConvoBubble';
 import { ResponseFeedback } from '../ResponseFeedback';
 import { ageGroups } from '../../data/ageGroups';
@@ -14,8 +15,13 @@ export const ConvoScript = () => {
 
   const [exchangeIndex, setExchangeIndex] = useState(0);
   const [responseIndex, setResponseIndex] = useState(null);
+  const [responsesVisible, setResponsesVisible] = useState(false);
 
   const exchanges = script.slice(0, exchangeIndex + 1);
+
+  const showResponses = () => {
+    setResponsesVisible(true);
+  };
 
   return (
     <>
@@ -44,15 +50,20 @@ export const ConvoScript = () => {
           );
         })}
 
-        {exchanges[exchangeIndex].responses.map((resp, index) => {
-          return (
-            <ResponseOption
-              key={index}
-              order={index + 1}
-              response={resp.response}
-            />
-          );
-        })}
+        {responsesVisible === false ? (
+          <ActionButton label="Zobrazit reakce" onClick={showResponses} />
+        ) : (
+          exchanges[exchangeIndex].responses.map((resp, index) => {
+            return (
+              <ResponseOption
+                key={index}
+                order={index + 1}
+                response={resp.response}
+              />
+            );
+          })
+        )}
+
         <ResponseFeedback status="true" content="Toto je zelený feedback" />
       </div>
 
