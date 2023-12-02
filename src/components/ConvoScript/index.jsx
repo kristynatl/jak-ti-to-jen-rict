@@ -27,7 +27,7 @@ export const ConvoScript = () => {
       return;
     }
 
-    if (resolvedConvo.length === script.length) {
+    if (resolvedConvo.length + 1 === script.length) {
       setAction('finish');
       setResolvedConvo([...resolvedConvo, currentOptions]);
     } else {
@@ -36,6 +36,8 @@ export const ConvoScript = () => {
       setCurrentOptions([]);
     }
   };
+
+  console.log(action);
 
   return (
     <>
@@ -51,11 +53,13 @@ export const ConvoScript = () => {
           );
         })}
 
-        <HistoryExchange
-          currentExchange={script[resolvedConvo.length]}
-          incorrectAnswers={currentOptions}
-          showCorrect={false}
-        />
+        {resolvedConvo.length !== script.length ? (
+          <HistoryExchange
+            currentExchange={script[resolvedConvo.length]}
+            incorrectAnswers={currentOptions}
+            showCorrect={false}
+          />
+        ) : null}
 
         {action !== 'showOptions' ? (
           <ActionButton
