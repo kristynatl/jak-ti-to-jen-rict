@@ -44,6 +44,7 @@ export const ConvoScript = () => {
               {exchange !== null ? (
                 <>
                   <ConvoBubble
+                    key={script[index].statement}
                     speaker="adult"
                     status={
                       script[index].responses[exchange].correct
@@ -53,6 +54,7 @@ export const ConvoScript = () => {
                     content={script[index].responses[exchange].response}
                   />
                   <ResponseFeedback
+                    key={script[index].responses[exchange].feedback}
                     status={
                       script[index].responses[exchange].correct
                         ? 'true'
@@ -86,7 +88,7 @@ export const ConvoScript = () => {
         )}
       </div>
 
-      <img
+      {/* <img
         className="how-to__figure left"
         src="./../pages/App/img/girl.png"
         alt="Žena"
@@ -95,7 +97,7 @@ export const ConvoScript = () => {
         className="how-to__figure right"
         src="./../pages/App/img/dad.png"
         alt="Chlapec"
-      />
+      /> */}
     </>
   );
 };

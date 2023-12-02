@@ -28,6 +28,7 @@ export const ChooseConvo = () => {
         {ageGroupData.convos.map((convo, index) => {
           return (
             <TopicOption
+              key={index}
               order={index + 1}
               topic={convo.topic}
               path={convo.id}
