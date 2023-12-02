@@ -1,0 +1,27 @@
+.choose-convo__option {
+  color: #D35F5F;
+  background: white;
+  box-shadow: 3px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  border: 1px solid #D35F5F;
+  font-family: 'Bebas Neue', sans-serif;
+  max-width: 350px;
+  font-size: x-large;
+  text-align: left;
+  padding: 0.5rem 0 0.5rem 1rem;
+  color: #D35F5F;
+  margin: 1rem;
+  letter-spacing: 1px;
+  width: 90%;
+}
+
+.choose-convo__option:hover,
+.choose-convo__option:focus {
+  color: white;
+  background: #D35F5F;
+}
+
+.choose-convo__option:active {
+  color: white;
+  background: black;
+  border: 1px solid black;
+}

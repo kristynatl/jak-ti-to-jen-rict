@@ -21,6 +21,12 @@ body {
   width: 70%;
 }
 
+.back {
+  color: black;
+  text-decoration: none;
+  align-self: start;
+}
+
 @media screen and (min-width: 770px) {
 
   .link:hover,

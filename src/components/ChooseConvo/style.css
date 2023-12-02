@@ -1,0 +1,65 @@
+.choose-convo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: 15% 0;
+  padding: 0 5%;
+}
+
+.choose-convo__section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.choose-convo__section p {
+  margin-bottom: 2rem;
+}
+
+.choose-convo__underline {
+  border-bottom: 1px solid black;
+  width: 100%;
+  align-self: center;
+}
+
+.choose-convo h1 {
+  font-size: x-large;
+  font-family: 'Alumni Sans', sans-serif;
+  font-weight: 600;
+  align-self: start;
+}
+
+.choose-convo__image {
+  height: 150px;
+  align-self: center;
+}
+
+.choose-convo h2 {
+  font-size: xx-large;
+  font-family: 'Alumni Sans', sans-serif;
+  font-weight: 600;
+  color: #D35F5F;
+  align-self: center;
+}
+
+
+@media screen and (min-width: 550px) {
+  .choose-convo h1 {
+    font-size: xx-large;
+    margin-top: 3rem;
+  }
+}
+
+@media screen and (min-width: 770px) {
+  .choose-convo {
+    width: 100%;
+    margin-top: 120px;
+    margin-bottom: 80px;
+  }
+
+  .choose-convo__section {
+    max-width: 800px;
+  }
+}

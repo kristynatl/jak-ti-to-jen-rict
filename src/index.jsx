@@ -16,7 +16,7 @@ const router = createBrowserRouter([
     element: <HowToPage />,
   },
   {
-    path: '/nacvik-rozhovoru',
+    path: '/nacvik-rozhovoru/*',
     element: <PracticePage />,
   },
   {
