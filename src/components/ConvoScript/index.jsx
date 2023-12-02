@@ -5,7 +5,7 @@ import { ConvoBubble } from '../ConvoBubble';
 import { ResponseFeedback } from '../ResponseFeedback';
 import { ageGroups } from '../../data/ageGroups';
 import { useParams } from 'react-router';
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 
 export const ConvoScript = () => {
   const { vek, scenar } = useParams();
@@ -13,30 +13,31 @@ export const ConvoScript = () => {
   const convoData = chosenAge.convos.find((convo) => convo.id === scenar);
   const script = convoData.script;
 
-  const [responsesVisible, setResponsesVisible] = useState(false);
+  const [responsesVisible, setResponsesVisible] = useState('hide');
   const [displayedConvo, setDisplayedConvo] = useState([null]);
 
   const previousConvo = displayedConvo.slice(0, displayedConvo.length - 1);
 
   const showResponses = () => {
-    setResponsesVisible(true);
+    setResponsesVisible('show');
   };
 
   const selectResponse = (responseIndex) => {
-    console.log('select', responseIndex);
-    setDisplayedConvo([...previousConvo, responseIndex, null]);
+    if (displayedConvo.length === script.length) {
+      setResponsesVisible('finish');
+      setDisplayedConvo([...previousConvo, responseIndex]);
+    } else {
+      setDisplayedConvo([...previousConvo, responseIndex, null]);
+    }
   };
-
-  console.log(displayedConvo);
 
   return (
     <>
       <div className="convo-script">
         {displayedConvo.map((exchange, index) => {
           return (
-            <>
+            <Fragment key={index}>
               <ConvoBubble
-                key={index}
                 speaker="child"
                 status="neutral"
                 content={script[index].statement}
@@ -44,7 +45,6 @@ export const ConvoScript = () => {
               {exchange !== null ? (
                 <>
                   <ConvoBubble
-                    key={script[index].statement}
                     speaker="adult"
                     status={
                       script[index].responses[exchange].correct
@@ -54,7 +54,6 @@ export const ConvoScript = () => {
                     content={script[index].responses[exchange].response}
                   />
                   <ResponseFeedback
-                    key={script[index].responses[exchange].feedback}
                     status={
                       script[index].responses[exchange].correct
                         ? 'true'
@@ -64,12 +63,19 @@ export const ConvoScript = () => {
                   />
                 </>
               ) : null}
-            </>
+            </Fragment>
           );
         })}
 
-        {responsesVisible === false ? (
-          <ActionButton label="Zobrazit reakce" onClick={showResponses} />
+        {responsesVisible !== 'show' ? (
+          <ActionButton
+            label={
+              responsesVisible === 'hide'
+                ? 'Zobrazit reakce'
+                : 'Zkusit další scénář'
+            }
+            onClick={showResponses}
+          />
         ) : (
           script[displayedConvo.length - 1].responses.map((resp, index) => {
             return (
