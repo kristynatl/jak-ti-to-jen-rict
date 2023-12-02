@@ -33,6 +33,7 @@ export const ConvoScript = () => {
     } else {
       setResolvedConvo([...resolvedConvo, currentOptions]);
       setAction(null);
+      setCurrentOptions([]);
     }
   };
 
