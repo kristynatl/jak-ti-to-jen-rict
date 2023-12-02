@@ -2,10 +2,13 @@ import { Link } from 'react-router-dom';
 import './style.css';
 import { useParams } from 'react-router';
 import { TopicOption } from '../TopicOption';
+import { ageGroups } from '../../data/ageGroups';
+import { preschoolConvo1 } from '../../data/preschoolConvo1';
+import { preschoolConvo2 } from '../../data/prechoolConvo2';
 
-export const ChooseConvo = ({ ageGroups }) => {
-  const { id } = useParams();
-  const ageGroupData = ageGroups.find((group) => group.id === id);
+export const ChooseConvo = () => {
+  const { vek } = useParams();
+  const ageGroupData = ageGroups.find((group) => group.id === vek);
 
   return (
     <div className="choose-convo">

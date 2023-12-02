@@ -30,18 +30,14 @@ const router = createBrowserRouter([
           {
             path: '/nacvik-rozhovoru',
             element: <ChooseAge />,
-            children: [
-              {
-                path: '/nacvik-rozhovoru/:id',
-                element: <ChooseConvo />,
-                children: [
-                  {
-                    path: '/nacvik-rozhovoru/:id/:scenar',
-                    element: <ConvoScript />,
-                  },
-                ],
-              },
-            ],
+          },
+          {
+            path: '/nacvik-rozhovoru/:vek',
+            element: <ChooseConvo />,
+          },
+          {
+            path: '/nacvik-rozhovoru/:vek/:scenar',
+            element: <ConvoScript />,
           },
         ],
       },

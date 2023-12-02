@@ -1,7 +1,8 @@
 import './style.css';
 import { AgeGroup } from '../AgeGroup';
+import { ageGroups } from '../../data/ageGroups';
 
-export const ChooseAge = ({ ageGroups }) => {
+export const ChooseAge = () => {
   return (
     <div className="practice">
       <div className="practice__section text">
