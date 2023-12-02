@@ -16,15 +16,11 @@ export const ConvoScript = () => {
   const [resolvedConvo, setResolvedConvo] = useState([]);
   const [currentOptions, setCurrentOptions] = useState([]);
 
-  const previousConvo = resolvedConvo.slice(0, resolvedConvo.length - 1);
-
   const showResponses = () => {
     setAction('showOptions');
   };
 
   const selectResponse = (responseIndex, isCorrect) => {
-    console.log(responseIndex, isCorrect);
-
     if (!isCorrect) {
       setCurrentOptions([...currentOptions, responseIndex]);
       setAction('showOptions');
@@ -33,9 +29,9 @@ export const ConvoScript = () => {
 
     if (resolvedConvo.length === script.length) {
       setAction('finish');
-      setResolvedConvo([...previousConvo, responseIndex]);
+      setResolvedConvo([...resolvedConvo, currentOptions]);
     } else {
-      setResolvedConvo([...previousConvo, responseIndex]);
+      setResolvedConvo([...resolvedConvo, currentOptions]);
       setAction(null);
     }
   };
