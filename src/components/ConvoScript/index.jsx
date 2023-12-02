@@ -28,6 +28,7 @@ export const ConvoScript = () => {
       setDisplayedConvo([...previousConvo, responseIndex]);
     } else {
       setDisplayedConvo([...previousConvo, responseIndex, null]);
+      setResponsesVisible('hide');
     }
   };
 
