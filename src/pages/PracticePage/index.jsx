@@ -5,7 +5,7 @@ import { MobileTopPanel } from '../../components/MobileTopPanel';
 import { ChooseAge } from '../../components/ChooseAge';
 import { ChooseConvo } from '../../components/ChooseConvo';
 import { ConvoScript } from '../../components/ConvoScript';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, Outlet } from 'react-router-dom';
 
 const ageGroups = [
   {
@@ -37,11 +37,12 @@ export const PracticePage = () => {
     <>
       <DesktopNavigation />
       <MobileTopPanel title="NÁCVIK ROZHOVORŮ" />
-      <Routes location={location} key={location.pathname}>
+      <ChooseAge ageGroups={ageGroups} />
+      {/* <Routes location={location} key={location.pathname}>
         <Route path="/" element={<ChooseAge ageGroups={ageGroups} />} />
         <Route path="/:id" element={<ChooseConvo ageGroups={ageGroups} />} />
         <Route path="/tady-bude-cesta-ke-scenari" element={<ConvoScript />} />
-      </Routes>
+      </Routes> */}
       <MobileNavigation />
     </>
   );

@@ -21,7 +21,7 @@ export const ChooseAge = ({ ageGroups }) => {
               age={group.text}
               src={group.src}
               alt={group.alt}
-              path={group.path}
+              path={group.id}
             />
           );
         })}

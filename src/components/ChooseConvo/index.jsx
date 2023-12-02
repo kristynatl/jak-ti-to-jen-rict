@@ -11,7 +11,7 @@ export const ChooseConvo = ({ ageGroups }) => {
     <div className="choose-convo">
       <div className="choose-convo__section">
         <Link to="/nacvik-rozhovoru" className="back">
-          &#8249;
+          <span>&#8249;</span>
           <p>zpět na výběr věkové kategorie</p>
         </Link>
         <img

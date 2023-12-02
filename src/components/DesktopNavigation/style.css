@@ -20,7 +20,8 @@
   .desktop-nav__links {
     display: flex;
     flex-direction: wrap;
-    align-items: start;
+    align-items: center;
+    justify-content: center;
     gap: 4.5rem;
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.5rem;

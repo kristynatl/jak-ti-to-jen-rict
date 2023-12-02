@@ -44,12 +44,12 @@ export const ConvoScript = () => {
 
       <img
         className="how-to__figure left"
-        src="./../pages/HowToPage/img/woman.png"
+        src="./../pages/App/img/girl.png"
         alt="Žena"
       />
       <img
         className="how-to__figure right"
-        src="./../pages/HowToPage/img/boy.png"
+        src="./../pages/App/img/dad.png"
         alt="Chlapec"
       />
     </>
