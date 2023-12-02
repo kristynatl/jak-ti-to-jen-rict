@@ -1,11 +1,10 @@
 import './style.css';
 import { ResponseOption } from '../ResponseOption';
 import { ActionButton } from '../ActionButton';
-import { ConvoBubble } from '../ConvoBubble';
-import { ResponseFeedback } from '../ResponseFeedback';
+import { HistoryExchange } from '../HistoryExchange';
 import { ageGroups } from '../../data/ageGroups';
 import { useParams } from 'react-router';
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 
 export const ConvoScript = () => {
   const { vek, scenar } = useParams();
@@ -13,83 +12,80 @@ export const ConvoScript = () => {
   const convoData = chosenAge.convos.find((convo) => convo.id === scenar);
   const script = convoData.script;
 
-  const [responsesVisible, setResponsesVisible] = useState('hide');
-  const [displayedConvo, setDisplayedConvo] = useState([null]);
+  const [action, setAction] = useState(null);
+  const [resolvedConvo, setResolvedConvo] = useState([]);
+  const [currentOptions, setCurrentOptions] = useState([]);
 
-  const previousConvo = displayedConvo.slice(0, displayedConvo.length - 1);
+  const previousConvo = resolvedConvo.slice(0, resolvedConvo.length - 1);
 
   const showResponses = () => {
-    setResponsesVisible('show');
+    setAction('showOptions');
   };
 
-  const selectResponse = (responseIndex) => {
-    if (displayedConvo.length === script.length) {
-      setResponsesVisible('finish');
-      setDisplayedConvo([...previousConvo, responseIndex]);
+  const selectResponse = (responseIndex, isCorrect) => {
+    console.log(responseIndex, isCorrect);
+
+    if (!isCorrect) {
+      setCurrentOptions([...currentOptions, responseIndex]);
+      setAction('showOptions');
+      return;
+    }
+
+    if (resolvedConvo.length === script.length) {
+      setAction('finish');
+      setResolvedConvo([...previousConvo, responseIndex]);
     } else {
-      setDisplayedConvo([...previousConvo, responseIndex, null]);
-      setResponsesVisible('hide');
+      setResolvedConvo([...previousConvo, responseIndex]);
+      setAction(null);
     }
   };
 
   return (
     <>
       <div className="convo-script">
-        {displayedConvo.map((exchange, index) => {
+        {resolvedConvo.map((exchange, index) => {
           return (
-            <Fragment key={index}>
-              <ConvoBubble
-                speaker="child"
-                status="neutral"
-                content={script[index].statement}
-              />
-              {exchange !== null ? (
-                <>
-                  <ConvoBubble
-                    speaker="adult"
-                    status={
-                      script[index].responses[exchange].correct
-                        ? 'correct'
-                        : 'incorrect'
-                    }
-                    content={script[index].responses[exchange].response}
-                  />
-                  <ResponseFeedback
-                    status={
-                      script[index].responses[exchange].correct
-                        ? 'true'
-                        : 'false'
-                    }
-                    content={script[index].responses[exchange].feedback}
-                  />
-                </>
-              ) : null}
-            </Fragment>
+            <HistoryExchange
+              key={index}
+              currentExchange={script[index]}
+              incorrectAnswers={exchange}
+              showCorrect={true}
+            />
           );
         })}
 
-        {responsesVisible !== 'show' ? (
+        <HistoryExchange
+          currentExchange={script[resolvedConvo.length]}
+          incorrectAnswers={currentOptions}
+          showCorrect={false}
+        />
+
+        {action !== 'showOptions' ? (
           <ActionButton
             label={
-              responsesVisible === 'hide'
+              action === null
                 ? 'Zobrazit reakce'
-                : 'Zkusit další scénář'
+                : action === 'finish'
+                ? 'Zkusit další scénář'
+                : 'Odpovědět znovu'
             }
             onClick={showResponses}
           />
         ) : (
-          script[displayedConvo.length - 1].responses.map((resp, index) => {
+          script[resolvedConvo.length].responses.map((resp, index) => {
+            if (currentOptions.includes(index)) {
+              return null;
+            }
+
             return (
-              <>
-                <ResponseOption
-                  key={index}
-                  order={index + 1}
-                  response={resp.response}
-                  onClick={() => {
-                    selectResponse(index);
-                  }}
-                />
-              </>
+              <ResponseOption
+                key={index}
+                order={index + 1}
+                response={resp.response}
+                onClick={() => {
+                  selectResponse(index, resp.correct);
+                }}
+              />
             );
           })
         )}
