@@ -16,27 +16,27 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: '/',
+        path: '',
         element: <HomePage />,
       },
       {
-        path: '/jak-na-to',
+        path: 'jak-na-to',
         element: <HowToPage />,
       },
       {
-        path: '/nacvik-rozhovoru',
+        path: 'nacvik-rozhovoru',
         element: <PracticePage />,
         children: [
           {
-            path: '/nacvik-rozhovoru',
+            path: '',
             element: <ChooseAge />,
           },
           {
-            path: '/nacvik-rozhovoru/:vek',
+            path: ':vek',
             element: <ChooseConvo />,
           },
           {
-            path: '/nacvik-rozhovoru/:vek/:scenar',
+            path: 'scenar',
             element: <ConvoScript />,
           },
         ],
