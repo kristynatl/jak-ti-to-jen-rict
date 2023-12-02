@@ -1,7 +1,8 @@
 import './style.css';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
-export const TopicOption = ({ topic, order }) => {
+export const TopicOption = ({ topic, order, path }) => {
   const buttonVariants = {
     hover: {
       scale: 1.1,
@@ -19,7 +20,9 @@ export const TopicOption = ({ topic, order }) => {
       whileTap="active"
       className="choose-convo__option"
     >
-      {order}. {topic}
+      <Link to={path} className="">
+        {order}. {topic}
+      </Link>
     </motion.button>
   );
 };

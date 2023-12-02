@@ -3,8 +3,6 @@ import './style.css';
 import { useParams } from 'react-router';
 import { TopicOption } from '../TopicOption';
 import { ageGroups } from '../../data/ageGroups';
-import { preschoolConvo1 } from '../../data/preschoolConvo1';
-import { preschoolConvo2 } from '../../data/prechoolConvo2';
 
 export const ChooseConvo = () => {
   const { vek } = useParams();
@@ -27,11 +25,15 @@ export const ChooseConvo = () => {
         <h1>Vyberte jeden z následujících scénářů:</h1>
       </div>
       <div className="choose-convo__section">
-        <TopicOption order={1} topic="Zkoumání vlastního těla" />
-        <TopicOption order={2} topic="Kde se berou děti" />
-        <TopicOption order={3} topic="Soukromí" />
-        <TopicOption order={4} topic="Potěšení ve vztahu" />
-        <TopicOption order={5} topic="Osobní hranice" />
+        {ageGroupData.convos.map((convo, index) => {
+          return (
+            <TopicOption
+              order={index + 1}
+              topic={convo.topic}
+              path={convo.id}
+            />
+          );
+        })}
       </div>
     </div>
   );

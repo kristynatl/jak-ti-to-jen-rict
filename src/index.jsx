@@ -36,7 +36,7 @@ const router = createBrowserRouter([
             element: <ChooseConvo />,
           },
           {
-            path: 'scenar',
+            path: ':vek/:scenar',
             element: <ConvoScript />,
           },
         ],

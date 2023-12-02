@@ -1,7 +1,14 @@
 import './style.css';
 import { ResponseOption } from '../ResponseOption';
+import { ageGroups } from '../../data/ageGroups';
+import { useParams } from 'react-router';
 
 export const ConvoScript = () => {
+  const { vek, scenar } = useParams();
+  const chosenAge = ageGroups.find((group) => group.id === vek);
+  const convoData = chosenAge.convos.find((convo) => convo.id === scenar);
+
+  console.log(convoData);
   return (
     <>
       <div className="convo-script">
