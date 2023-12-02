@@ -13,38 +13,47 @@ export const ConvoScript = () => {
   const script = convoData.script;
 
   const [exchangeIndex, setExchangeIndex] = useState(0);
+  const [responseIndex, setResponseIndex] = useState(null);
 
   const exchanges = script.slice(0, exchangeIndex + 1);
 
   return (
     <>
       <div className="convo-script">
-        {exchanges.map((ex) => {
+        {exchanges.map((ex, index) => {
           return (
-            <ConvoBubble
-              speaker="child"
-              status="neutral"
-              content={ex.statement}
+            <>
+              <ConvoBubble
+                key={index}
+                speaker="child"
+                status="neutral"
+                content={ex.statement}
+              />
+              {responseIndex !== null ? (
+                <ConvoBubble
+                  speaker="adult"
+                  status={
+                    ex.responses[responseIndex].correct
+                      ? 'correct'
+                      : 'incorrect'
+                  }
+                  content={ex.responses[responseIndex].response}
+                />
+              ) : null}
+            </>
+          );
+        })}
+
+        {exchanges[exchangeIndex].responses.map((resp, index) => {
+          return (
+            <ResponseOption
+              key={index}
+              order={index + 1}
+              response={resp.response}
             />
           );
         })}
-        <ConvoBubble speaker="child" status="neutral" content="Hola" />
-        <ConvoBubble speaker="adult" status="incorrect" content="Jak je?" />
-        <ConvoBubble speaker="adult" status="correct" content="Tralalá" />
-        <ResponseFeedback status="false" content="Toto je červený feedback" />
         <ResponseFeedback status="true" content="Toto je zelený feedback" />
-        <ResponseOption
-          order="A"
-          response="Víš, když jsi u někoho doma na návštěvě, musíš poslouchat jejich pravidla."
-        />
-        <ResponseOption
-          order="B"
-          response="Jeho táta se asi bál, že vám bude zima a nastydnete."
-        />
-        <ResponseOption
-          order="C"
-          response="Proč si myslíš, že se jeho táta tak zlobil?"
-        />
       </div>
 
       <img
