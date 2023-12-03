@@ -99,12 +99,12 @@ export const ConvoScript = () => {
 
       <img
         className="convo__figure convo__figure--left"
-        src="./../../pages/HomePage/img/girl.png"
+        src="/img/girl.png"
         alt="Žena"
       />
       <img
         className="convo__figure convo__figure--right"
-        src="./../../pages/HomePage/img/dad.png"
+        src="/img/dad.png"
         alt="Chlapec"
       />
     </>
