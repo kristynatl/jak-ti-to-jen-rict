@@ -8,6 +8,7 @@ import { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router';
 
 export const ConvoScript = () => {
   const { vek, scenar } = useParams();
@@ -21,8 +22,9 @@ export const ConvoScript = () => {
 
   const scrollOnRevealRef = useRef(null);
 
+  const navigate = useNavigate();
+
   const scrollOnReveal = () => {
-    console.log(scrollOnRevealRef.current);
     scrollOnRevealRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -30,10 +32,12 @@ export const ConvoScript = () => {
     scrollOnReveal();
   }, [action]);
 
-  console.log(action);
-
   const showResponses = () => {
     setAction('showOptions');
+  };
+
+  const handleNavigate = () => {
+    navigate(`/nacvik-rozhovoru/${vek}`);
   };
 
   const selectResponse = (responseIndex, isCorrect) => {
@@ -82,6 +86,7 @@ export const ConvoScript = () => {
         {resolvedConvo.map((exchange, index) => {
           return (
             <HistoryExchange
+              scrollRef={scrollOnRevealRef}
               key={index}
               currentExchange={script[index]}
               incorrectAnswers={exchange}
@@ -108,7 +113,7 @@ export const ConvoScript = () => {
                 ? 'Zkusit další scénář'
                 : 'Odpovědět znovu'
             }
-            onClick={showResponses}
+            onClick={action === 'finish' ? handleNavigate : showResponses}
           />
         ) : (
           script[resolvedConvo.length].responses.map((resp, index) => {
