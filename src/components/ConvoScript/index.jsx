@@ -4,9 +4,10 @@ import { ActionButton } from '../ActionButton';
 import { HistoryExchange } from '../HistoryExchange';
 import { ageGroups } from '../../data/ageGroups';
 import { useParams } from 'react-router';
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useRef, useEffect } from 'react';
 
 export const ConvoScript = () => {
   const { vek, scenar } = useParams();
@@ -17,6 +18,19 @@ export const ConvoScript = () => {
   const [action, setAction] = useState(null);
   const [resolvedConvo, setResolvedConvo] = useState([]);
   const [currentOptions, setCurrentOptions] = useState([]);
+
+  const scrollOnRevealRef = useRef(null);
+
+  const scrollOnReveal = () => {
+    console.log(scrollOnRevealRef.current);
+    scrollOnRevealRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    scrollOnReveal();
+  }, [action]);
+
+  console.log(action);
 
   const showResponses = () => {
     setAction('showOptions');
@@ -75,9 +89,10 @@ export const ConvoScript = () => {
             />
           );
         })}
-
+        {/* <div ref={scrollOnRevealRef} /> */}
         {resolvedConvo.length !== script.length ? (
           <HistoryExchange
+            scrollRef={scrollOnRevealRef}
             currentExchange={script[resolvedConvo.length]}
             incorrectAnswers={currentOptions}
             showCorrect={false}
@@ -102,14 +117,16 @@ export const ConvoScript = () => {
             }
 
             return (
-              <ResponseOption
-                key={index}
-                order={index + 1}
-                response={resp.response}
-                onClick={() => {
-                  selectResponse(index, resp.correct);
-                }}
-              />
+              <Fragment key={index}>
+                <div ref={scrollOnRevealRef} />
+                <ResponseOption
+                  order={index + 1}
+                  response={resp.response}
+                  onClick={() => {
+                    selectResponse(index, resp.correct);
+                  }}
+                />
+              </Fragment>
             );
           })
         )}

@@ -6,6 +6,7 @@ export const HistoryExchange = ({
   currentExchange,
   incorrectAnswers,
   showCorrect,
+  scrollRef,
 }) => {
   const correctAnswer = currentExchange.responses.find(
     (response) => response.correct,
@@ -22,6 +23,7 @@ export const HistoryExchange = ({
         return (
           <Fragment key={answerIndex}>
             <ConvoBubble
+              scrollRef={scrollRef}
               speaker="adult"
               status="incorrect"
               content={currentExchange.responses[answerIndex].response}
@@ -37,6 +39,7 @@ export const HistoryExchange = ({
       {showCorrect && (
         <>
           <ConvoBubble
+            scrollRef={scrollRef}
             speaker="adult"
             status="correct"
             content={correctAnswer.response}

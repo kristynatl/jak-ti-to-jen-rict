@@ -3,6 +3,15 @@ import { motion } from 'framer-motion';
 
 export const ActionButton = ({ label, onClick }) => {
   const buttonVariants = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.3,
+      },
+    },
     hover: {
       scale: 1.1,
       transition: { duration: 0.2 },
@@ -15,6 +24,8 @@ export const ActionButton = ({ label, onClick }) => {
   return (
     <motion.button
       variants={buttonVariants}
+      initial="hidden"
+      animate="visible"
       whileHover="hover"
       whileTap="active"
       className="action-button"

@@ -50,13 +50,18 @@ export const IntroIllustration = () => {
     },
   };
 
-  const animationControls = useAnimationControls();
+  // const animationControls = useAnimationControls();
 
-  useEffect(() => {
-    if (window.scrollY === 0) {
-      animationControls.start('moved');
-    }
-  }, []);
+  // useEffect(() => {
+  //   const animateImages = () => {
+  //     if (window.scrollY === 0) {
+  //       animationControls.start('centered');
+  //       animationControls.start('moved');
+  //     }
+
+  //     animateImages();
+  //   };
+  // }, []);
 
   return (
     <>
@@ -70,8 +75,8 @@ export const IntroIllustration = () => {
 
       <motion.img
         variants={leftFigureVariants}
-        // initial="centered"
-        animate={animationControls}
+        initial={window.scrollY === 0 ? 'centered' : 'moved'}
+        animate="moved"
         className="intro__figure intro__figure--left"
         src="img/girl.webp"
         alt="Dívka"
