@@ -50,7 +50,7 @@ export const IntroIllustration = () => {
         initial="visible"
         animate="hidden"
         className="intro__bubble"
-        src="../pages/HomePage/img/bubble.png"
+        src="img/bubble.png"
       />
 
       <motion.img
@@ -58,7 +58,7 @@ export const IntroIllustration = () => {
         initial="centered"
         animate="moved"
         className="intro__figure"
-        src="../pages/HomePage/img/girl.png"
+        src="img/girl.webp"
         alt="Dívka"
       />
       <motion.img
@@ -66,7 +66,7 @@ export const IntroIllustration = () => {
         initial="centered"
         animate="moved"
         className="intro__figure"
-        src="../pages/HomePage/img/dad.png"
+        src="img/dad.webp"
         alt="Muž"
       />
     </>

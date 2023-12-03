@@ -33,8 +33,8 @@ export const AboutPage = () => {
           </p>
         </div>
       </div>
-      <img className="about__figure left" src="/img/woman.png" alt="Žena" />
-      <img className="about__figure right" src="/img/boy.png" alt="Chlapec" />
+      <img className="about__figure left" src="/img/woman.webp" alt="Žena" />
+      <img className="about__figure right" src="/img/boy.webp" alt="Chlapec" />
       <MobileNavigation />
     </>
   );

@@ -36,7 +36,7 @@ export const BookAnimation = () => {
         whileInView="hidden"
         exit="exit"
         className="how-to__book fade-out"
-        src="./pages/HowToPage/img/book.png"
+        src="/img/book.png"
         alt="kniha Děti to chtěj vědět taky"
       />
       <motion.img
@@ -44,7 +44,7 @@ export const BookAnimation = () => {
         initial="hidden"
         whileInView="visible"
         className="how-to__book"
-        src="./pages/HowToPage/img/book-hover.png"
+        src="/img/book-hover.png"
         alt="kniha Děti to chtěj vědět taky"
       />
     </div>

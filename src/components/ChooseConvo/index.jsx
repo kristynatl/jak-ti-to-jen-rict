@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './style.css';
 import { useParams } from 'react-router';
 import { TopicOption } from '../TopicOption';
@@ -11,7 +11,7 @@ export const ChooseConvo = () => {
   return (
     <div className="choose-convo">
       <div className="choose-convo__section">
-        <Link to="javascript:history.back()" className="back">
+        <Link to="/nacvik-rozhovoru" className="back">
           <span>&#8249;</span>
           <p>zpět na výběr věkové kategorie</p>
         </Link>

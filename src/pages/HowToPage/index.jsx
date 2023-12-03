@@ -120,8 +120,8 @@ export const HowToPage = () => {
           </a>
         </div>
       </div>
-      <img className="how-to__figure left" src="/img/woman.png" alt="Žena" />
-      <img className="how-to__figure right" src="/img/boy.png" alt="Chlapec" />
+      <img className="how-to__figure left" src="/img/woman.webp" alt="Žena" />
+      <img className="how-to__figure right" src="/img/boy.webp" alt="Chlapec" />
       <MobileNavigation />
     </>
   );

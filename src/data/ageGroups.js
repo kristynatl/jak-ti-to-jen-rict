@@ -5,7 +5,7 @@ export const ageGroups = [
   {
     id: 'predskolni-vek',
     text: 'Předškolní věk',
-    src: '/img/child1.png',
+    src: '/img/child1.webp',
     alt: 'Ilustrace dítěte v předškolním věku',
     path: '/nacvik-rozhovoru/predskolni-vek',
     convos: [
@@ -27,7 +27,7 @@ export const ageGroups = [
   {
     id: 'mladsi-skolni-vek',
     text: 'Mladší školní věk',
-    src: '/img/child2.png',
+    src: '/img/child2.webp',
     alt: 'Ilustrace dítěte v mladším školním věku',
     path: '/nacvik-rozhovoru/mladsi-skolni-vek',
     convos: [{ id: 'masturbace', topic: 'Masturbace', script: [] }],
@@ -35,7 +35,7 @@ export const ageGroups = [
   {
     id: 'dospivani',
     text: 'Dospívání',
-    src: '/img/child3.png',
+    src: '/img/child3.webp',
     alt: 'Ilustrace dospívajícího dítěte',
     path: '/nacvik-rozhovoru/dospivani',
     convos: [{ id: 'byt-dobry-v-sexu', topic: 'Být dobrý v sexu', script: [] }],

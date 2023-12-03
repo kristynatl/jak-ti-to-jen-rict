@@ -6,6 +6,7 @@ import { ageGroups } from '../../data/ageGroups';
 import { useParams } from 'react-router';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 export const ConvoScript = () => {
   const { vek, scenar } = useParams();
@@ -38,15 +39,32 @@ export const ConvoScript = () => {
     }
   };
 
-  console.log(action);
+  const progressVariants = {
+    progress: {
+      width: `${(resolvedConvo.length / script.length) * 100}%`,
+    },
+  };
 
   return (
     <>
       <div className="convo-script">
-        <Link to="javascript:history.back()" className="back">
+        <Link to={`/nacvik-rozhovoru/${vek}`} className="back">
           <span>&#8249;</span>
           <p>zpět na výběr scénáře</p>
         </Link>
+        <div className="convo-script__header">
+          <h2>{convoData.topic}</h2>
+          <div className="convo-script__progress-bar">
+            <motion.div
+              variants={progressVariants}
+              animate="progress"
+              className="convo-script__progress-fill"
+            ></motion.div>
+            <p className="convo-script__progress">
+              {resolvedConvo.length}/{script.length}
+            </p>
+          </div>
+        </div>
         {resolvedConvo.map((exchange, index) => {
           return (
             <HistoryExchange
@@ -99,12 +117,12 @@ export const ConvoScript = () => {
 
       <img
         className="convo__figure convo__figure--left"
-        src="/img/girl.png"
+        src="/img/girl.webp"
         alt="Žena"
       />
       <img
         className="convo__figure convo__figure--right"
-        src="/img/dad.png"
+        src="/img/dad.webp"
         alt="Chlapec"
       />
     </>
