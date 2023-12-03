@@ -17,7 +17,12 @@ export const ConvoScript = () => {
   const script = convoData.script;
 
   const [action, setAction] = useState(null);
-  const [resolvedConvo, setResolvedConvo] = useState([]);
+  const [resolvedConvo, setResolvedConvo] = useState(
+    JSON.parse(localStorage.getItem(scenar)),
+  );
+
+  console.log(resolvedConvo);
+
   const [currentOptions, setCurrentOptions] = useState([]);
 
   const scrollOnRevealRef = useRef(null);
@@ -31,6 +36,10 @@ export const ConvoScript = () => {
   useEffect(() => {
     scrollOnReveal();
   }, [action]);
+
+  useEffect(() => {
+    localStorage.setItem(scenar, JSON.stringify(resolvedConvo));
+  }, [resolvedConvo]);
 
   const showResponses = () => {
     setAction('showOptions');

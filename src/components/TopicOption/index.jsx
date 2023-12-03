@@ -2,7 +2,7 @@ import './style.css';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-export const TopicOption = ({ topic, order, path }) => {
+export const TopicOption = ({ topic, order, path, state }) => {
   const buttonVariants = {
     hover: {
       scale: 1.1,
@@ -12,6 +12,8 @@ export const TopicOption = ({ topic, order, path }) => {
       scale: 0.9,
     },
   };
+
+  console.log(topic, state);
 
   return (
     <motion.button

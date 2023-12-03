@@ -8,6 +8,22 @@ export const ChooseConvo = () => {
   const { vek } = useParams();
   const ageGroupData = ageGroups.find((group) => group.id === vek);
 
+  // const getConvoState = (convo) => {
+  //   if (convo === undefined) {
+  //     return 'notStarted';
+  //   }
+  //   let state = 'notStarted';
+
+  //   if (savedConvo !== null) {
+  //     if (savedConvo.length === convo.script.length) {
+  //       state = 'finished';
+  //     } else {
+  //       state = 'inProgress';
+  //     }
+  //   }
+  //   return state;
+  // };
+
   return (
     <div className="choose-convo">
       <div className="choose-convo__section">
@@ -26,8 +42,19 @@ export const ChooseConvo = () => {
       </div>
       <div className="choose-convo__section">
         {ageGroupData.convos.map((convo, index) => {
+          const savedConvo = JSON.parse(localStorage.getItem(convo.id));
+          let state = 'notStarted';
+
+          if (savedConvo !== null) {
+            if (savedConvo.length === convo.script.length) {
+              state = 'finished';
+            } else {
+              state = 'inProgress';
+            }
+          }
           return (
             <TopicOption
+              state={state}
               key={index}
               order={index + 1}
               topic={convo.topic}
