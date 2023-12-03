@@ -1,15 +1,17 @@
 import './style.css';
-import { motion } from 'framer-motion';
+import { motion, useAnimationControls } from 'framer-motion';
+import { useEffect } from 'react';
 
 export const IntroIllustration = () => {
   const leftFigureVariants = {
-    centered: { left: '10vw' },
+    centered: { left: '50%', transform: 'tratranslateX(-100%)', bottom: '30%' },
     moved: {
       left: 0,
       bottom: '10%',
       transform: 'translateX(-45%)',
       transition: {
         type: 'spring',
+        stiffness: 35,
         delay: 2,
         duration: 1,
       },
@@ -17,13 +19,18 @@ export const IntroIllustration = () => {
   };
 
   const rightFigureVariants = {
-    centered: { right: '10vw' },
+    centered: {
+      right: '50%',
+      transform: 'tratranslateX(100%)',
+      bottom: '30%',
+    },
     moved: {
       right: 0,
       bottom: '10%',
       transform: 'translateX(50%)',
       transition: {
         type: 'spring',
+        stiffness: 35,
         delay: 2,
         duration: 1,
       },
@@ -43,6 +50,14 @@ export const IntroIllustration = () => {
     },
   };
 
+  const animationControls = useAnimationControls();
+
+  useEffect(() => {
+    if (window.scrollY === 0) {
+      animationControls.start('moved');
+    }
+  }, []);
+
   return (
     <>
       <motion.img
@@ -55,9 +70,9 @@ export const IntroIllustration = () => {
 
       <motion.img
         variants={leftFigureVariants}
-        initial="centered"
-        animate="moved"
-        className="intro__figure"
+        // initial="centered"
+        animate={animationControls}
+        className="intro__figure intro__figure--left"
         src="img/girl.webp"
         alt="Dívka"
       />

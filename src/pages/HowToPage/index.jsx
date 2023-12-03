@@ -10,7 +10,6 @@ export const HowToPage = () => {
   return (
     <>
       <MobileTopPanel title="JAK NA TO" />
-      <DesktopNavigation />
       <div className="how-to">
         <div className="how-to__section introduction">
           <p>
@@ -85,7 +84,7 @@ export const HowToPage = () => {
           </ul>
         </div>
         <span className="how-to__underline" />
-        <div className="how-to__section practice">
+        <div className="how-to__section">
           <p>
             Chcete si vyzkoušet teorii v praxi a na rozhovor s dítětem se ještě
             necítíte? Pak si můžete nanečisto vyzkoušet některou z připravených
@@ -122,7 +121,6 @@ export const HowToPage = () => {
       </div>
       <img className="how-to__figure left" src="/img/woman.webp" alt="Žena" />
       <img className="how-to__figure right" src="/img/boy.webp" alt="Chlapec" />
-      <MobileNavigation />
     </>
   );
 };

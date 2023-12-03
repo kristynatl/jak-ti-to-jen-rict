@@ -1,16 +1,28 @@
 .intro__figure {
   max-height: 250px;
   max-width: 40vw;
-  position: absolute;
+  position: fixed;
   bottom: 0;
+}
+
+.intro__figure--left {
+  left: 0;
+  bottom: 10%;
+  transform: translateX(-45%);
+}
+
+.intro__figure--right {
+  right: 0;
+  bottom: 10%;
+  transform: translateX(50%);
 }
 
 .intro__bubble {
   max-width: 50vw;
-  max-height: 70px;
+  max-height: 100px;
   position: absolute;
-  top: 0;
-  left: 10vw;
+  top: -20%;
+  right: 50%;
 }
 
 @media screen and (min-width: 420px) {

@@ -11,12 +11,12 @@
 
 .intro {
   position: relative;
-  height: 260px;
   width: 100%;
-  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 2rem;
+  margin-top: 100px;
 }
 
 .intro__info {
@@ -50,10 +50,20 @@
   font-size: 1.5rem;
 }
 
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.action-buttons a {
+  margin: 0 1rem;
+}
+
+
 @media screen and (min-width: 420px) {
-  .intro {
-    height: 360px;
-  }
 
   .intro__info {
     margin-top: 20%;
@@ -73,6 +83,14 @@
   .intro__heading {
     font-size: xx-large;
   }
+}
+
+@media screen and (min-width: 770px) {
+  .action-buttons {
+    flex-direction: row;
+    gap: 3rem;
+  }
+
 }
 
 @media screen and (min-width: 1024px) {

@@ -1,13 +1,13 @@
 import './style.css';
-import { motion } from 'framer-motion';
+import { motion, useAnimationControls } from 'framer-motion';
 
 export const BookAnimation = () => {
   const imageFadeOutVariants = {
     hidden: {
       opacity: 0,
       transition: {
-        delay: 3,
-        duration: 3,
+        delay: 2,
+        duration: 2,
       },
     },
     visible: {
@@ -22,8 +22,8 @@ export const BookAnimation = () => {
     visible: {
       opacity: 1,
       transition: {
-        delay: 3,
-        duration: 3,
+        delay: 2,
+        duration: 2,
       },
     },
   };
