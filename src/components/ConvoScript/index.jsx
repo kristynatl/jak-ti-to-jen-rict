@@ -23,7 +23,7 @@ export const ConvoScript = () => {
   const selectResponse = (responseIndex, isCorrect) => {
     if (!isCorrect) {
       setCurrentOptions([...currentOptions, responseIndex]);
-      setAction('showOptions');
+      setAction('tryAgain');
       return;
     }
 
@@ -92,16 +92,16 @@ export const ConvoScript = () => {
         )}
       </div>
 
-      {/* <img
-        className="how-to__figure left"
-        src="./../pages/App/img/girl.png"
+      <img
+        className="convo__figure convo__figure--left"
+        src="./../../pages/HomePage/img/girl.png"
         alt="Žena"
       />
       <img
-        className="how-to__figure right"
-        src="./../pages/App/img/dad.png"
+        className="convo__figure convo__figure--right"
+        src="./../../pages/HomePage/img/dad.png"
         alt="Chlapec"
-      /> */}
+      />
     </>
   );
 };

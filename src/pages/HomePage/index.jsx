@@ -15,17 +15,6 @@ export const HomePage = () => {
   return (
     <div className="container">
       <div className="intro">
-        <AnimatePresence>
-          {isVisible && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 2 }}
-            >
-              <DesktopNavigation />
-            </motion.div>
-          )}
-        </AnimatePresence>
         <IntroIllustration />
         <AnimatePresence>
           {isVisible && (
@@ -47,7 +36,6 @@ export const HomePage = () => {
           )}
         </AnimatePresence>
       </div>
-      <AnimatePresence>{isVisible && <MobileNavigation />}</AnimatePresence>
     </div>
   );
 };

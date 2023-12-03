@@ -60,3 +60,41 @@
 .true {
   background: #C7E9B2;
 }
+
+.convo__figure {
+  max-height: 200px;
+  max-width: 40vw;
+  position: fixed;
+  bottom: 45px;
+}
+
+.convo__figure--left {
+  transform: translateX(-50%);
+}
+
+.convo__figure--right {
+  right: 0;
+  transform: translateX(55%);
+}
+
+@media screen and (min-width: 550px) {
+  .convo__figure {
+    max-height: 300px;
+    max-width: 40vw;
+    position: fixed;
+    bottom: 45px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .convo__figure {
+    bottom: 20%;
+    max-height: 400px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .convo__figure {
+    transform: translateX(0);
+  }
+}
