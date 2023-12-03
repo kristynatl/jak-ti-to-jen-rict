@@ -5,6 +5,7 @@ import { HistoryExchange } from '../HistoryExchange';
 import { ageGroups } from '../../data/ageGroups';
 import { useParams } from 'react-router';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export const ConvoScript = () => {
   const { vek, scenar } = useParams();
@@ -42,6 +43,10 @@ export const ConvoScript = () => {
   return (
     <>
       <div className="convo-script">
+        <Link to="javascript:history.back()" className="back">
+          <span>&#8249;</span>
+          <p>zpět na výběr scénáře</p>
+        </Link>
         {resolvedConvo.map((exchange, index) => {
           return (
             <HistoryExchange

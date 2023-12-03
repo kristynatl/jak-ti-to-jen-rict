@@ -11,7 +11,7 @@ export const ChooseConvo = () => {
   return (
     <div className="choose-convo">
       <div className="choose-convo__section">
-        <Link to="/nacvik-rozhovoru" className="back">
+        <Link to="javascript:history.back()" className="back">
           <span>&#8249;</span>
           <p>zpět na výběr věkové kategorie</p>
         </Link>
