@@ -18,6 +18,10 @@ export const MobileNavigation = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   const linksVariants = {
     hidden: {
       x: '-100vw',
@@ -33,10 +37,11 @@ export const MobileNavigation = () => {
 
   return (
     <AnimatePresence>
+      {/* {menuOpen && <div className="mobile-nav__overlay" onClick={closeMenu} />} */}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 2 }}
+        initial={{ y: '100vh' }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.5 }}
         exit={{ opacity: 1 }}
         className="mobile-nav"
       >
@@ -57,6 +62,7 @@ export const MobileNavigation = () => {
                   className={`mobile-nav__link ${
                     isActive ? 'mobile-nav__link--current-page' : ''
                   }`}
+                  onClick={closeMenu}
                 >
                   {link.title}
                 </Link>

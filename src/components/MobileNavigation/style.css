@@ -12,6 +12,15 @@
   z-index: 1;
 }
 
+.mobile-nav__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vh;
+  height: calc(100% - 243.56px);
+  z-index: 999;
+}
+
 .mobile-nav__toggle {
   cursor: pointer;
   padding: 0.7rem;
