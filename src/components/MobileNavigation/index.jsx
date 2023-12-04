@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './style.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
@@ -10,6 +10,8 @@ const navLinks = [
 ];
 
 export const MobileNavigation = () => {
+  const location = useNavigate();
+
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -46,8 +48,16 @@ export const MobileNavigation = () => {
             animate="visible"
           >
             {navLinks.map((link, index) => {
+              const isActive = location.pathname === link.path;
+
               return (
-                <Link to={link.path} key={index} className="mobile-nav__link">
+                <Link
+                  to={link.path}
+                  key={index}
+                  className={`mobile-nav__link ${
+                    isActive ? 'mobile-nav__link--current-page' : ''
+                  }`}
+                >
                   {link.title}
                 </Link>
               );

@@ -1,5 +1,5 @@
 import './style.css';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { MenuToggle } from '../MenuToggle';
 import { useState } from 'react';
@@ -11,6 +11,8 @@ const navLinks = [
 ];
 
 export const AltMobileNavigation = () => {
+  const location = useLocation();
+
   const [menuOpen, setMenuOpen] = useState(false);
 
   const linksVariants = {
@@ -39,8 +41,16 @@ export const AltMobileNavigation = () => {
           animate="visible"
         >
           {navLinks.map((link, index) => {
+            const isActive = location.pathname === link.path;
+
             return (
-              <Link to={link.path} key={index} className="mobile-nav__link">
+              <Link
+                to={link.path}
+                key={index}
+                className={`desktop-nav__link ${
+                  isActive ? 'desktop-nav__link--current-page' : ''
+                }`}
+              >
                 {link.title}
               </Link>
             );

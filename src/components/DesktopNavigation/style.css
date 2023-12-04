@@ -34,6 +34,11 @@
     padding: 0.5rem 0 0.2rem 0;
   }
 
+  .desktop-nav__link--current-page {
+    color: black;
+    border-bottom: 1px solid black
+  }
+
   .desktop-nav__link:hover,
   .desktop-nav__link:focus {
     border-bottom: 1px solid black

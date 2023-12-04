@@ -34,6 +34,11 @@
   color: white;
 }
 
+.mobile-nav__link--current-page {
+  /* zjisti, proč tahle třída krucipísek nefunguje! */
+  border-left: 1px solid white;
+}
+
 
 @media screen and (min-width: 550px) {
   .mobile-nav {
