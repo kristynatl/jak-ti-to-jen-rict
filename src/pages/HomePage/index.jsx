@@ -2,7 +2,6 @@ import './style.css';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useRef } from 'react';
 import { IntroIllustration } from '../../components/IntroIllustration';
-import { MobileTopPanel } from '../../components/MobileTopPanel';
 import { Link } from 'react-router-dom';
 import { ActionButton } from '../../components/ActionButton';
 import { BookAnimation } from '../../components/BookAnimation';
@@ -54,7 +53,6 @@ export const HomePage = () => {
           </AnimatePresence>
         </div>
       </div>
-      <MobileTopPanel title="JAK NA TO" />
       <div className="how-to" ref={scrollRef}>
         <div className="how-to__section introduction">
           <p>

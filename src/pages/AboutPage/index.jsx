@@ -1,13 +1,11 @@
 import './style.css';
 import { DesktopNavigation } from '../../components/DesktopNavigation';
 import { MobileNavigation } from '../../components/MobileNavigation';
-import { MobileTopPanel } from '../../components/MobileTopPanel';
 
 export const AboutPage = () => {
   return (
     <>
       <DesktopNavigation />
-      <MobileTopPanel title="O PROJEKTU" />
       <div className="about">
         <div className="about__section">
           <p>

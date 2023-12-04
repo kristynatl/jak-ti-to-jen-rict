@@ -9,7 +9,6 @@ import { BookAnimation } from '../../components/BookAnimation';
 export const HowToPage = () => {
   return (
     <>
-      <MobileTopPanel title="JAK NA TO" />
       <div className="how-to">
         <div className="how-to__section introduction">
           <p>
