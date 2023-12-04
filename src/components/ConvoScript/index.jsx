@@ -16,13 +16,11 @@ export const ConvoScript = () => {
   const convoData = chosenAge.convos.find((convo) => convo.id === scenar);
   const script = convoData.script;
 
+  const storedConvo = localStorage.getItem(scenar);
+  const initialConvo = storedConvo ? JSON.parse(storedConvo) : [];
+
+  const [resolvedConvo, setResolvedConvo] = useState(initialConvo);
   const [action, setAction] = useState(null);
-  const [resolvedConvo, setResolvedConvo] = useState(
-    JSON.parse(localStorage.getItem(scenar)),
-  );
-
-  console.log(resolvedConvo);
-
   const [currentOptions, setCurrentOptions] = useState([]);
 
   const scrollOnRevealRef = useRef(null);
@@ -103,7 +101,6 @@ export const ConvoScript = () => {
             />
           );
         })}
-        {/* <div ref={scrollOnRevealRef} /> */}
         {resolvedConvo.length !== script.length ? (
           <HistoryExchange
             scrollRef={scrollOnRevealRef}
