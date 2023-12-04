@@ -54,6 +54,13 @@ export const preschoolConvo2 = [
     responses: [
       {
         response:
+          'Zhruba po devíti měsících začne maminku bolet bříško. Tak pozná, že chce ven. Rození miminka je pro maminku hodně vyčerpávající a bolestivé, trvá to několik hodin a může při tom ztratit hodně krve. Ale neboj, lidé v nemocnici se o maminku starají, aby to pro ni bylo co nejméně nepříjemné.',
+        feedback:
+          'Dávejte si pozor na to, jak o porodu s dítětem mluvíte. Takový typ odpovědi dítě může vystrašit a může v něm zanechat dojem, že rození dětí je něco strašného. Stejně tak buďte opatrní se sdílením případné vaší zkušenosti s porodem, pokud nebyla pozitivní.',
+        correct: false,
+      },
+      {
+        response:
           'Když miminko přichází na svět, říká se tomu porod. Když je miminko dostatečně velké a silné, maminka to ucítí a jede do nemocnice, kde jí s porodem pomohou hodné doktorky a hodní doktoři. Miminko pak vyleze ven vagínou, nebo jí udělají malý řez dole na bříšku a tamtudy se miminko vyndá, ale to není tak časté.',
         feedback:
           'Dobrá práce! Odpověděli jste srozumitelně a bez vytáček. Je jen na vás, do jakých detailů zajdete - zda zmíníte císařský řez nebo domácí porod, či si to necháte na později. ',

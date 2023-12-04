@@ -8,7 +8,7 @@ import { BookAnimation } from '../../components/BookAnimation';
 
 export const HomePage = () => {
   const scrollRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
+  // const [isVisible, setIsVisible] = useState(false);
 
   // setTimeout(() => {
   //   setIsVisible(true);

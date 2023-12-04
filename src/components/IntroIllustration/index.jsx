@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 export const IntroIllustration = () => {
-  const [scrollValue, setScrollValue] = useState(0);
+  const [scrollValue, setScrollValue] = useState(null);
 
   const handleScroll = () => {
     const normalizedScrollValue = window.scrollY / window.innerHeight;
