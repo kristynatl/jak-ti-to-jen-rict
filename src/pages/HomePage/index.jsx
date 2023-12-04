@@ -10,9 +10,9 @@ export const HomePage = () => {
   const scrollRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
-  setTimeout(() => {
-    setIsVisible(true);
-  }, 3000);
+  // setTimeout(() => {
+  //   setIsVisible(true);
+  // }, 3000);
 
   const scrollOnClick = () => {
     scrollRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -25,34 +25,33 @@ export const HomePage = () => {
       </div>
       <div className="container">
         <div className="intro">
-          <AnimatePresence>
-            {isVisible && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 2 }}
-                exit={{ opacity: 1 }}
-                className="intro__info"
-              >
-                <h1 className="intro__heading">Jak ti to jen říct?</h1>
-                <span className="intro__underline"></span>
-                <p className="intro__description">
-                  online nástroj, který pomáhá rodičům a pečujícím osobám
-                  připravit se na rozhovor s dětmi o intimitě a respektování
-                  osobních hranic
-                </p>
-                <div className="action-buttons">
-                  <ActionButton
-                    label="PŘEČÍST SI JAK NA TO"
-                    onClick={scrollOnClick}
-                  />
-                  <Link to="/nacvik-rozhovoru">
-                    <ActionButton label="ZKUSIT SI ROZHOVOR" />
-                  </Link>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+          {/* <AnimatePresence>
+            {isVisible && ( */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 2 }}
+            exit={{ opacity: 1 }}
+            className="intro__info"
+          >
+            <h1 className="intro__heading">Jak ti to jen říct?</h1>
+            <span className="intro__underline"></span>
+            <p className="intro__description">
+              online nástroj, který pomáhá rodičům a pečujícím osobám připravit
+              se na rozhovor s dětmi o intimitě a respektování osobních hranic
+            </p>
+            <div className="action-buttons">
+              <ActionButton
+                label="PŘEČÍST SI JAK NA TO"
+                onClick={scrollOnClick}
+              />
+              <Link to="/nacvik-rozhovoru">
+                <ActionButton label="ZKUSIT SI ROZHOVOR" />
+              </Link>
+            </div>
+          </motion.div>
+          {/* )}
+          </AnimatePresence> */}
         </div>
       </div>
       <div className="how-to" ref={scrollRef}>

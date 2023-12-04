@@ -17,27 +17,27 @@ export const App = () => {
   const currentPath = location.pathname;
   const currentTitle = pageTitlesByPath[currentPath];
 
-  const [isVisible, setIsVisible] = useState(false);
+  // const [isVisible, setIsVisible] = useState(false);
 
-  setTimeout(() => {
-    setIsVisible(true);
-  }, 2000);
+  // setTimeout(() => {
+  //   setIsVisible(true);
+  // }, 2000);
 
   return (
     <>
-      <AnimatePresence>
-        {isVisible && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 2 }}
-          >
-            <MobileTopPanel title={currentTitle} />
-            <DesktopNavigation />
-            <MobileNavigation />
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* <AnimatePresence>
+        {isVisible && ( */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2 }}
+      >
+        <MobileTopPanel title={currentTitle} />
+        <DesktopNavigation />
+        <MobileNavigation />
+      </motion.div>
+      {/* )}
+       </AnimatePresence> */}
       <Outlet />
     </>
   );
