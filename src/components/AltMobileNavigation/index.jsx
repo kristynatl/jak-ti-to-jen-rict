@@ -5,7 +5,7 @@ import { MenuToggle } from '../MenuToggle';
 import { useState } from 'react';
 
 const navLinks = [
-  { title: 'JAK NA TO', path: '/jak-na-to' },
+  { title: 'JAK NA TO', path: '/' },
   { title: 'NÁCVIK ROZHOVORŮ', path: '/nacvik-rozhovoru' },
   { title: 'O PROJEKTU', path: '/o-projektu' },
 ];

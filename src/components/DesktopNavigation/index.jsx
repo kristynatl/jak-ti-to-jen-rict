@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const navLinks = [
-  { title: 'JAK NA TO', path: '/jak-na-to' },
+  { title: 'JAK NA TO', path: '/' },
   { title: 'NÁCVIK ROZHOVORŮ', path: '/nacvik-rozhovoru' },
   { title: 'O PROJEKTU', path: '/o-projektu' },
 ];
