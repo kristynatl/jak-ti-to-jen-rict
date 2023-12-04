@@ -6,15 +6,59 @@
 }
 
 .intro__figure--left {
+  /* left: 50%;
+  bottom: 30%;
+  transform: translateX(-100%); */
+
+  animation: move-left 1s linear;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+
   left: 0;
   bottom: 10%;
   transform: translateX(-45%);
 }
 
 .intro__figure--right {
+  /* right: 50%;
+  bottom: 30%;
+  transform: translateX(100%); */
+
+  animation: move-right 1s linear;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+
   right: 0;
   bottom: 10%;
   transform: translateX(50%);
+}
+
+@keyframes move-right {
+  from {
+    right: 50%;
+    bottom: 30%;
+    transform: translateX(100%);
+  }
+
+  to {
+    right: 0;
+    bottom: 10%;
+    transform: translateX(50%);
+  }
+}
+
+@keyframes move-left {
+  from {
+    left: 50%;
+    bottom: 30%;
+    transform: translateX(-100%);
+  }
+
+  to {
+    left: 0;
+    bottom: 10%;
+    transform: translateX(-45%);
+  }
 }
 
 .intro__bubble {

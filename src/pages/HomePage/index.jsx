@@ -21,8 +21,10 @@ export const HomePage = () => {
   return (
     <>
       <div className="container">
+        <IntroIllustration />
+      </div>
+      <div className="container">
         <div className="intro">
-          <IntroIllustration />
           <AnimatePresence>
             {isVisible && (
               <motion.div
@@ -162,8 +164,6 @@ export const HomePage = () => {
           </a>
         </div>
       </div>
-      {/* <img className="how-to__figure left" src="/img/woman.webp" alt="Žena" />
-      <img className="how-to__figure right" src="/img/boy.webp" alt="Chlapec" /> */}
     </>
   );
 };
