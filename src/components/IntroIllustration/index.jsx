@@ -20,7 +20,7 @@ export const IntroIllustration = () => {
   };
 
   return (
-    <>
+    <div className="animation-container">
       <motion.img
         // variants={bubbleVariants}
         // initial="visible"
@@ -47,7 +47,12 @@ export const IntroIllustration = () => {
         src="img/dad.webp"
         alt="Muž"
       />
-    </>
+      <div className="scroll-indicator">
+        <div className="scroll-indicator__arrow"></div>
+        <div className="scroll-indicator__arrow"></div>
+        <div className="scroll-indicator__arrow"></div>
+      </div>
+    </div>
   );
 };
 

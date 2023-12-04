@@ -6,7 +6,7 @@ export const BookAnimation = () => {
     hidden: {
       opacity: 0,
       transition: {
-        delay: 2,
+        delay: 1,
         duration: 2,
       },
     },
@@ -22,7 +22,7 @@ export const BookAnimation = () => {
     visible: {
       opacity: 1,
       transition: {
-        delay: 2,
+        delay: 1,
         duration: 2,
       },
     },
