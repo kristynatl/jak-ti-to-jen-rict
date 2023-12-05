@@ -1,27 +1,21 @@
 import { Outlet } from 'react-router';
-import { useLocation } from 'react-router';
 import { DesktopNavigation } from '../../components/DesktopNavigation';
 import { MobileTopPanel } from '../../components/MobileTopPanel';
-import { motion } from 'framer-motion';
 import { AltMobileNavigation } from '../../components/AltMobileNavigation';
 
-const pageTitlesByPath = {
-  '/': 'Jak ti to jen říct?',
-  '/nacvik-rozhovoru': 'Nácvik rozhovorů',
-  '/o-projektu': 'O projektu',
-};
+const navLinks = [
+  { title: 'Jak ti to jen říct?', path: '/' },
+  { title: 'Nácvik rozhovorů', path: '/nacvik-rozhovoru' },
+  { title: 'O projektu', path: '/o-projektu' },
+];
 
 export const App = () => {
-  const location = useLocation();
-  const currentPath = location.pathname;
-  const currentTitle = pageTitlesByPath[currentPath];
-
   return (
     <>
-      <DesktopNavigation />
+      <DesktopNavigation links={navLinks} />
       <Outlet />
-      <MobileTopPanel title={currentTitle} />
-      <AltMobileNavigation />
+      <MobileTopPanel links={navLinks} />
+      <AltMobileNavigation links={navLinks} />
     </>
   );
 };

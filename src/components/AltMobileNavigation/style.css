@@ -32,6 +32,7 @@
 .mobile-nav__link {
   text-decoration: none;
   color: white;
+  z-index: 3;
 }
 
 a {
@@ -46,6 +47,7 @@ a {
   position: fixed;
   bottom: 0;
   width: 100%;
+  z-index: 2;
 }
 
 .hamburger-button {

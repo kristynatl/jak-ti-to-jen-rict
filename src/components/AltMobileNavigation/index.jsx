@@ -4,13 +4,7 @@ import { motion } from 'framer-motion';
 import { MenuToggle } from '../MenuToggle';
 import { useState } from 'react';
 
-const navLinks = [
-  { title: 'Jak ti to jen říct?', path: '/' },
-  { title: 'Nácvik rozhovorů', path: '/nacvik-rozhovoru' },
-  { title: 'O projektu', path: '/o-projektu' },
-];
-
-export const AltMobileNavigation = () => {
+export const AltMobileNavigation = ({ links }) => {
   const location = useLocation();
 
   const [menuOpen, setMenuOpen] = useState(false);
@@ -31,6 +25,14 @@ export const AltMobileNavigation = () => {
     },
   };
 
+  const isActive = (link) => {
+    if (link.path === '/' && location.pathname !== '/') {
+      return false;
+    }
+
+    return location.pathname.includes(link.path);
+  };
+
   return (
     <motion.nav
       className="mobile-altnav"
@@ -43,15 +45,13 @@ export const AltMobileNavigation = () => {
           initial="hidden"
           animate="visible"
         >
-          {navLinks.map((link, index) => {
-            const isActive = location.pathname === link.path;
-
+          {links.map((link, index) => {
             return (
               <Link
                 to={link.path}
                 key={index}
                 className={`mobile-nav__link ${
-                  isActive ? 'mobile-nav__link--current-page' : ''
+                  isActive(link) ? 'mobile-nav__link--current-page' : ''
                 }`}
                 onClick={() => setMenuOpen(false)}
               >

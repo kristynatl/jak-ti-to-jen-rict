@@ -2,13 +2,7 @@ import './style.css';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-const navLinks = [
-  { title: 'Jak ti to jen říct?', path: '/' },
-  { title: 'Nácvik rozhovorů', path: '/nacvik-rozhovoru' },
-  { title: 'O projektu', path: '/o-projektu' },
-];
-
-export const DesktopNavigation = () => {
+export const DesktopNavigation = ({ links }) => {
   const location = useLocation();
 
   const linksVariants = {
@@ -21,12 +15,18 @@ export const DesktopNavigation = () => {
     },
   };
 
+  const isActive = (link) => {
+    if (link.path === '/' && location.pathname !== '/') {
+      return false;
+    }
+
+    return location.pathname.includes(link.path);
+  };
+
   return (
     <div className="desktop-nav">
       <nav className="desktop-nav__links">
-        {navLinks.map((link, index) => {
-          const isActive = location.pathname === link.path;
-
+        {links.map((link, index) => {
           return (
             <motion.div
               key={index}
@@ -37,7 +37,7 @@ export const DesktopNavigation = () => {
               <Link
                 to={link.path}
                 className={`desktop-nav__link ${
-                  isActive ? 'desktop-nav__link--current-page' : ''
+                  isActive(link) ? 'desktop-nav__link--current-page' : ''
                 }`}
               >
                 {link.title}
