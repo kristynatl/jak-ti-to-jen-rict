@@ -15,7 +15,7 @@ const menuVariants = {
   open: {
     x: -20,
     y: 25,
-    width: '100vW',
+    width: '70vW',
     height: '100vh',
     borderRadius: 0,
     transition: {
