@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 
 const pageTitlesByPath = {
-  '/': 'Jak na to',
+  '/': 'Jak ti to jen říct?',
   '/nacvik-rozhovoru': 'Nácvik rozhovorů',
   '/o-projektu': 'O projektu',
 };

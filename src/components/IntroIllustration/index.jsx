@@ -47,7 +47,7 @@ export const IntroIllustration = () => {
         src="img/dad.webp"
         alt="Muž"
       />
-      <div className="scroll-indicator">
+      <div style={scrollValueStyle} className="scroll-indicator">
         <div className="scroll-indicator__arrow"></div>
         <div className="scroll-indicator__arrow"></div>
         <div className="scroll-indicator__arrow"></div>
