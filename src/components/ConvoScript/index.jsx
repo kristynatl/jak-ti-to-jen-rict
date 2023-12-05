@@ -23,6 +23,8 @@ export const ConvoScript = () => {
   const [action, setAction] = useState(null);
   const [currentOptions, setCurrentOptions] = useState([]);
 
+  console.log(action);
+
   const scrollOnRevealRef = useRef(null);
 
   const navigate = useNavigate();
@@ -51,6 +53,13 @@ export const ConvoScript = () => {
     if (!isCorrect) {
       setCurrentOptions([...currentOptions, responseIndex]);
       setAction('tryAgain');
+      return;
+    }
+
+    if (isCorrect && resolvedConvo.length + 1 !== script.length) {
+      console.log('správná odpověď');
+      setResolvedConvo([...resolvedConvo, currentOptions]);
+      setAction('continue');
       return;
     }
 
@@ -102,25 +111,41 @@ export const ConvoScript = () => {
           );
         })}
         {resolvedConvo.length !== script.length ? (
-          <HistoryExchange
-            scrollRef={scrollOnRevealRef}
-            currentExchange={script[resolvedConvo.length]}
-            incorrectAnswers={currentOptions}
-            showCorrect={false}
-          />
+          <>
+            {action === 'continue' ? (
+              <ActionButton
+                label="Pokračovat"
+                onClick={() => {
+                  setAction(null);
+                  setCurrentOptions([]);
+                }}
+              />
+            ) : (
+              <HistoryExchange
+                scrollRef={scrollOnRevealRef}
+                currentExchange={script[resolvedConvo.length]}
+                incorrectAnswers={currentOptions}
+                showCorrect={false}
+              />
+            )}
+          </>
         ) : null}
 
         {action !== 'showOptions' ? (
-          <ActionButton
-            label={
-              action === null
-                ? 'Zobrazit reakce'
-                : action === 'finish'
-                ? 'Zkusit další scénář'
-                : 'Odpovědět znovu'
-            }
-            onClick={action === 'finish' ? handleNavigate : showResponses}
-          />
+          <>
+            {action !== 'continue' ? (
+              <ActionButton
+                label={
+                  action === null
+                    ? 'Zobrazit reakce'
+                    : action === 'finish'
+                    ? 'Zkusit další scénář'
+                    : 'Odpovědět znovu'
+                }
+                onClick={action === 'finish' ? handleNavigate : showResponses}
+              />
+            ) : null}
+          </>
         ) : (
           script[resolvedConvo.length].responses.map((resp, index) => {
             if (currentOptions.includes(index)) {

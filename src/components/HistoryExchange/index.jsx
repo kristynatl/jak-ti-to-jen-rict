@@ -15,6 +15,7 @@ export const HistoryExchange = ({
   return (
     <>
       <ConvoBubble
+        scrollRef={scrollRef}
         speaker="child"
         status="neutral"
         content={currentExchange.statement}

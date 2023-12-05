@@ -15,7 +15,7 @@
   animation-delay: calc(var(--scroll) * -1s);
 
   left: 0;
-  bottom: 10%;
+  bottom: 20%;
   transform: translateX(-45%);
 }
 
@@ -29,20 +29,20 @@
   animation-delay: calc(var(--scroll) * -1s);
 
   right: 0;
-  bottom: 10%;
+  bottom: 20%;
   transform: translateX(50%);
 }
 
 @keyframes move-right {
   from {
     right: 50%;
-    bottom: 30%;
-    transform: translateX(100%);
+    bottom: 50%;
+    transform: translate(100%, 50%);
   }
 
   to {
     right: 0;
-    bottom: 10%;
+    bottom: 20%;
     transform: translateX(50%);
   }
 }
@@ -50,13 +50,13 @@
 @keyframes move-left {
   from {
     left: 50%;
-    bottom: 30%;
-    transform: translateX(-100%);
+    bottom: 50%;
+    transform: translate(-100%, 50%);
   }
 
   to {
     left: 0;
-    bottom: 10%;
+    bottom: 20%;
     transform: translateX(-45%);
   }
 }
@@ -105,7 +105,7 @@
     opacity: 1;
   }
 
-  30% {
+  20% {
     opacity: 0;
   }
 
