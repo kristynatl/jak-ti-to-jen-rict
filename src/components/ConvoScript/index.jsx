@@ -57,7 +57,6 @@ export const ConvoScript = () => {
     }
 
     if (isCorrect && resolvedConvo.length + 1 !== script.length) {
-      console.log('správná odpověď');
       setResolvedConvo([...resolvedConvo, currentOptions]);
       setAction('continue');
       return;

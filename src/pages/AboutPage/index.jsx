@@ -1,11 +1,8 @@
 import './style.css';
-import { DesktopNavigation } from '../../components/DesktopNavigation';
-import { MobileNavigation } from '../../components/MobileNavigation';
 
 export const AboutPage = () => {
   return (
     <>
-      <DesktopNavigation />
       <div className="about">
         <div className="about__section">
           <p>
@@ -33,7 +30,6 @@ export const AboutPage = () => {
       </div>
       <img className="about__figure left" src="/img/woman.webp" alt="Žena" />
       <img className="about__figure right" src="/img/boy.webp" alt="Chlapec" />
-      <MobileNavigation />
     </>
   );
 };

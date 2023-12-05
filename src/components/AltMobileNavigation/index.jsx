@@ -5,9 +5,9 @@ import { MenuToggle } from '../MenuToggle';
 import { useState } from 'react';
 
 const navLinks = [
-  { title: 'JAK NA TO', path: '/' },
-  { title: 'NÁCVIK ROZHOVORŮ', path: '/nacvik-rozhovoru' },
-  { title: 'O PROJEKTU', path: '/o-projektu' },
+  { title: 'Jak ti to jen říct?', path: '/' },
+  { title: 'Nácvik rozhovorů', path: '/nacvik-rozhovoru' },
+  { title: 'O projektu', path: '/o-projektu' },
 ];
 
 export const AltMobileNavigation = () => {
@@ -25,14 +25,17 @@ export const AltMobileNavigation = () => {
       y: -70,
       transition: {
         type: 'spring',
-        mass: 0.7,
-        delay: 0.3,
+        mass: 0.5,
+        delay: 0.2,
       },
     },
   };
 
   return (
-    <motion.nav animate={menuOpen ? 'open' : 'closed'}>
+    <motion.nav
+      className="mobile-altnav"
+      animate={menuOpen ? 'open' : 'closed'}
+    >
       {menuOpen && (
         <motion.nav
           className="mobile-nav__menu"
@@ -47,9 +50,10 @@ export const AltMobileNavigation = () => {
               <Link
                 to={link.path}
                 key={index}
-                className={`desktop-nav__link ${
-                  isActive ? 'desktop-nav__link--current-page' : ''
+                className={`mobile-nav__link ${
+                  isActive ? 'mobile-nav__link--current-page' : ''
                 }`}
+                onClick={() => setMenuOpen(false)}
               >
                 {link.title}
               </Link>
