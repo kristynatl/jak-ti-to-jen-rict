@@ -41,6 +41,12 @@ export const ConvoScript = () => {
     localStorage.setItem(scenar, JSON.stringify(resolvedConvo));
   }, [resolvedConvo]);
 
+  useEffect(() => {
+    if (resolvedConvo.length === script.length) {
+      setAction('finish');
+    }
+  }, []);
+
   const showResponses = () => {
     setAction('showOptions');
   };
