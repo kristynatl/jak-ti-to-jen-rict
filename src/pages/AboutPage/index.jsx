@@ -26,6 +26,7 @@ export const AboutPage = () => {
             dlouho po skončení akademie. Protože děti to vědět chtějí. A dospělí
             chtějí vědět, <em>jak jim to jen říct</em>.
           </p>
+          <div className="space-filler" />
         </div>
       </div>
       <img
