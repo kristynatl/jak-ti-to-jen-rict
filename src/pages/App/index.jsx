@@ -1,4 +1,5 @@
 import { Outlet } from 'react-router';
+
 import { DesktopNavigation } from '../../components/DesktopNavigation';
 import { MobileTopPanel } from '../../components/MobileTopPanel';
 import { MobileNavigation } from '../../components/MobileNavigation';

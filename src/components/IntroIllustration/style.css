@@ -1,3 +1,12 @@
+.animation-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+
+/* Styles for the images */
+
 .intro__figure {
   max-height: 250px;
   max-width: 40vw;
@@ -6,30 +15,22 @@
 }
 
 .intro__figure--left {
-  /* left: 50%;
-  bottom: 30%;
-  transform: translateX(-100%); */
-
-  animation: move-left 1s linear;
+  animation: move-left 0.7s linear;
   animation-play-state: paused;
   animation-delay: calc(var(--scroll) * -1s);
 
   left: 0;
-  bottom: 20%;
+  bottom: 12%;
   transform: translateX(-45%);
 }
 
 .intro__figure--right {
-  /* right: 50%;
-  bottom: 30%;
-  transform: translateX(100%); */
-
-  animation: move-right 1s linear;
+  animation: move-right 0.7s linear;
   animation-play-state: paused;
   animation-delay: calc(var(--scroll) * -1s);
 
   right: 0;
-  bottom: 20%;
+  bottom: 12%;
   transform: translateX(50%);
 }
 
@@ -42,7 +43,7 @@
 
   to {
     right: 0;
-    bottom: 20%;
+    bottom: 12%;
     transform: translateX(50%);
   }
 }
@@ -56,17 +57,9 @@
 
   to {
     left: 0;
-    bottom: 20%;
+    bottom: 12%;
     transform: translateX(-45%);
   }
-}
-
-.intro__bubble {
-  max-width: 50vw;
-  max-height: 100px;
-  position: absolute;
-  top: -20%;
-  right: 50%;
 }
 
 @media screen and (min-width: 420px) {
@@ -81,12 +74,43 @@
   }
 }
 
+@media screen and (min-width: 1400px) {
 
-.animation-container {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
+  .intro__figure--left,
+  .intro__figure--right {
+    transform: translateX(0);
+  }
+
+  @keyframes move-right {
+    from {
+      right: 50%;
+      bottom: 50%;
+      transform: translate(100%, 50%);
+    }
+
+    to {
+      right: 0;
+      bottom: 12%;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes move-left {
+    from {
+      left: 50%;
+      bottom: 50%;
+      transform: translate(-100%, 50%);
+    }
+
+    to {
+      left: 0;
+      bottom: 12%;
+      transform: translateX(0);
+    }
+  }
 }
+
+/* Styles for the scroll indicator */
 
 .scroll-indicator {
   display: flex;

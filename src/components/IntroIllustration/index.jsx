@@ -23,18 +23,12 @@ export const IntroIllustration = () => {
     <div className="animation-container">
       <motion.img
         style={scrollValueStyle}
-        // variants={leftFigureVariants}
-        // initial={scrollValue < 0.3 ? 'centered' : 'moved'}
-        // animate="moved"
         className="intro__figure intro__figure--left"
         src="img/girl.webp"
         alt="Dívka"
       />
       <motion.img
         style={scrollValueStyle}
-        // variants={rightFigureVariants}
-        // initial="centered"
-        // animate="moved"
         className="intro__figure intro__figure--right"
         src="img/dad.webp"
         alt="Muž"
@@ -47,50 +41,3 @@ export const IntroIllustration = () => {
     </div>
   );
 };
-
-// const leftFigureVariants = {
-//   centered: { left: '50%', transform: 'tratranslateX(-100%)', bottom: '30%' },
-//   moved: {
-//     left: 0,
-//     bottom: '10%',
-//     transform: 'translateX(-45%)',
-//     transition: {
-//       type: 'spring',
-//       stiffness: 35,
-//       delay: 2,
-//       duration: 1,
-//     },
-//   },
-// };
-
-// const rightFigureVariants = {
-//   centered: {
-//     right: '50%',
-//     transform: 'tratranslateX(100%)',
-//     bottom: '30%',
-//   },
-//   moved: {
-//     right: 0,
-//     bottom: '10%',
-//     transform: 'translateX(50%)',
-//     transition: {
-//       type: 'spring',
-//       stiffness: 35,
-//       delay: 2,
-//       duration: 1,
-//     },
-//   },
-// };
-
-// const bubbleVariants = {
-//   visible: {
-//     opacity: 1,
-//   },
-//   hidden: {
-//     opacity: 0,
-//     transition: {
-//       delay: 2,
-//       duration: 0.3,
-//     },
-//   },
-// };

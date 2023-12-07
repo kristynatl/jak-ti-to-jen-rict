@@ -1,67 +1,40 @@
-.about {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  margin: 15% 0;
-  padding: 0 18%;
-}
-
-.about__section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-}
-
-.about__section p {
-  font-family: 'Alumni Sans', sans-serif;
-  font-size: large;
-  text-align: justify;
-  margin: 0.5rem 0;
-}
+/* Styles for the images */
 
 .about__figure {
-  max-height: 200px;
+  max-height: 250px;
   max-width: 40vw;
   position: fixed;
-  bottom: 85px;
+  bottom: 0;
 }
 
-@media screen and (min-width: 550px) {
+.about__figure--left {
+  left: 0;
+  bottom: 12%;
+  transform: translateX(-45%);
+}
+
+.about__figure--right {
+  right: 0;
+  bottom: 12%;
+  transform: translateX(50%);
+}
+
+@media screen and (min-width: 420px) {
   .about__figure {
-    max-height: 300px;
-    max-width: 40vw;
-    position: fixed;
-    bottom: 45px;
+    max-height: 360px;
   }
 }
 
-@media screen and (min-width: 770px) {
-  .about {
-    width: 100%;
-    margin-top: 150px;
-    margin-bottom: 80px;
-  }
-
-  .about__section {
-    max-width: 800px;
-  }
-
-  .about__section p {
-    font-size: x-large;
-  }
-}
-
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 620px) {
   .about__figure {
-    bottom: 20%;
-    max-height: 400px;
+    max-height: 450px;
   }
 }
 
 @media screen and (min-width: 1400px) {
-  .about__figure {
+
+  .about__figure--left,
+  .about__figure--right {
     transform: translateX(0);
   }
 }

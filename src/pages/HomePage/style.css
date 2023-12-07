@@ -2,21 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@100;200;300;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lobster&display=swap');
 
-.container {
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-}
+/* Styles for the intro part of homepage */
 
 .intro {
   position: relative;
   width: 100%;
   display: flex;
-  align-items: center;
+  height: 100vh;
   justify-content: center;
+  align-items: center;
   gap: 2rem;
-  margin-top: 100px;
 }
 
 .intro__info {
@@ -24,13 +19,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 80%;
+  width: 70%;
 }
 
 .intro__heading {
   margin: 0;
   font-family: 'Bebas Neue', sans-serif;
-  font-size: x-large;
+  font-size: large;
   font-weight: 300;
   margin-bottom: 0.5rem;
   transform: scale(1.3);
@@ -38,7 +33,7 @@
 
 .intro__underline {
   border-bottom: 1px solid black;
-  width: 50%;
+  width: 40%;
   transform: scale(1.3);
 }
 
@@ -47,21 +42,15 @@
   margin-top: 1rem;
   text-align: center;
   font-family: 'Alumni Sans', sans-serif;
-  font-size: 1.5rem;
+  font-size: large
 }
 
-
-.action-buttons {
+.intro-buttons {
+  width: 70%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  width: 100%;
+  align-items: center;
 }
-
-.action-buttons a {
-  margin: 0 1rem;
-}
-
 
 @media screen and (min-width: 420px) {
 
@@ -72,9 +61,6 @@
 }
 
 @media screen and (min-width: 620px) {
-  .intro {
-    height: 495px;
-  }
 
   .intro__info {
     margin-top: 0
@@ -83,14 +69,10 @@
   .intro__heading {
     font-size: xx-large;
   }
-}
 
-@media screen and (min-width: 770px) {
-  .action-buttons {
-    flex-direction: row;
-    gap: 3rem;
+  .intro__description {
+    font-size: x-large
   }
-
 }
 
 @media screen and (min-width: 1024px) {
@@ -108,114 +90,31 @@
   }
 }
 
-
-/*styly pro 'jak na to' podstránku */
-
-.how-to {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  scroll-margin-top: 100px;
-  padding: 0 15%;
+@media screen and (min-width: 1300px) {
+  .intro-buttons {
+    flex-direction: row;
+    gap: 3rem;
+  }
 }
 
-.how-to__section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
-.how-to__section p {
-  font-family: 'Alumni Sans', sans-serif;
-  font-size: large;
-  text-align: justify;
-  margin: 0.5rem 0;
-  animation: fade-in-on-scroll linear both;
-  animation-timeline: view();
-  animation-range: entry-crossing 25% cover 40%;
-}
+/* Styles for the conversation theory part of homepage */
 
-.how-to__underline {
-  border-bottom: 1px solid black;
-  width: 80%;
-}
-
-.how-to__tips {
+.tips-list {
   padding: 0;
   margin-top: 0;
 }
 
-.how-to__tip {
+.tips-list__tip {
   list-style-type: none;
 }
 
-.how-to__tip h2 {
+.tips-list__heading {
   color: #D35F5F;
   font-family: 'Bebas Neue', sans-serif;
   font-weight: 500;
   margin-bottom: 0.5rem;
   animation: fade-in-on-scroll linear;
   animation-timeline: view();
-  animation-range: entry-crossing 25% cover 30%;
-}
-
-.how-to__figure {
-  max-height: 200px;
-  max-width: 40vw;
-  position: fixed;
-  bottom: 45px;
-}
-
-.left {
-  transform: translateX(-62%);
-}
-
-.right {
-  right: 0;
-  transform: translateX(65%);
-}
-
-@media screen and (min-width: 550px) {
-  .how-to__figure {
-    max-height: 300px;
-    max-width: 40vw;
-    position: fixed;
-    bottom: 45px;
-  }
-}
-
-@media screen and (min-width: 770px) {
-  .how-to {
-    width: 100%;
-    margin-top: 150px;
-    margin-bottom: 80px;
-  }
-
-  .how-to__section {
-    max-width: 800px;
-  }
-
-  .how-to__section p {
-    font-size: x-large;
-  }
-
-  .how-to__underline {
-    border-bottom: 1px solid black;
-    max-width: 550px;
-    margin: 2rem 0
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .how-to__figure {
-    bottom: 20%;
-    max-height: 400px;
-  }
-}
-
-@media screen and (min-width: 1400px) {
-  .how-to__figure {
-    transform: translateX(0);
-  }
+  animation-range: entry-crossing 20% cover 30%;
 }
