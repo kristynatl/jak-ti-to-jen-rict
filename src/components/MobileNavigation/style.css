@@ -9,24 +9,15 @@
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  z-index: 1;
 }
 
-.mobile-nav__overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vh;
-  height: calc(100% - 243.56px);
-  z-index: 999;
+@media screen and (min-width: 550px) {
+  .mobile-altnav {
+    display: none;
+  }
 }
 
-.mobile-nav__toggle {
-  cursor: pointer;
-  padding: 0.7rem;
-}
-
-.mobile-nav__links {
+.mobile-nav__menu {
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -35,22 +26,70 @@
   font-size: 1.7rem;
   transform: translateX(-35%);
   margin-top: 2rem;
-  z-index: 2;
+  margin-bottom: 45px;
 }
 
 .mobile-nav__link {
   text-decoration: none;
   color: white;
+  z-index: 3;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.mobile-nav__overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 30vw;
+  height: 100vh;
+  z-index: 999;
+}
+
+
+/* framer hamburger */
+
+.mobile-altnav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.hamburger-button {
+  outline: none;
+  border: none;
+  position: absolute;
+  bottom: 18px;
+  left: 15px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.circle {
+  position: absolute;
+  bottom: 25px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #d35f5f;
+  z-index: -1;
+}
+
+.mobile-nav__link {
+  text-decoration: none;
+  color: white;
+  padding: 0.5rem 0 0.2rem 0.5rem;
 }
 
 .mobile-nav__link--current-page {
-  /* zjisti, proč tahle třída krucipísek nefunguje! */
-  border-left: 1px solid white;
-}
-
-
-@media screen and (min-width: 550px) {
-  .mobile-nav {
-    display: none;
-  }
+  /* color: black; */
+  border-left: 2px solid black;
+  color: black;
 }

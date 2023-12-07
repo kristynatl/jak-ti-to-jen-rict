@@ -1,22 +1,13 @@
-import { useState } from 'react';
 import './style.css';
-import { Link, useNavigate } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { Link, useLocation } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { MenuToggle } from '../MenuToggle';
+import { useState } from 'react';
 
-const navLinks = [
-  { title: 'JAK NA TO', path: '/' },
-  { title: 'NÁCVIK ROZHOVORŮ', path: '/nacvik-rozhovoru' },
-  { title: 'O PROJEKTU', path: '/o-projektu' },
-];
-
-export const MobileNavigation = () => {
-  const location = useNavigate();
+export const MobileNavigation = ({ links }) => {
+  const location = useLocation();
 
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
 
   const closeMenu = () => {
     setMenuOpen(false);
@@ -25,44 +16,50 @@ export const MobileNavigation = () => {
   const linksVariants = {
     hidden: {
       x: '-100vw',
+      y: -70,
     },
     visible: {
-      x: '-20%',
+      x: 30,
+      y: -70,
       transition: {
         type: 'spring',
-        mass: 0.7,
+        mass: 0.5,
+        delay: 0.2,
       },
     },
   };
 
+  const isActive = (link) => {
+    if (link.path === '/' && location.pathname !== '/') {
+      return false;
+    }
+
+    return location.pathname.includes(link.path);
+  };
+
   return (
-    <AnimatePresence>
-      {/* {menuOpen && <div className="mobile-nav__overlay" onClick={closeMenu} />} */}
-      <motion.div
-        initial={{ y: '100vh' }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.5 }}
-        exit={{ opacity: 1 }}
-        className="mobile-nav"
+    <>
+      {menuOpen && <div className="mobile-nav__overlay" onClick={closeMenu} />}
+      <motion.nav
+        className="mobile-altnav"
+        animate={menuOpen ? 'open' : 'closed'}
       >
         {menuOpen && (
           <motion.nav
-            className="mobile-nav__links"
+            className="mobile-nav__menu"
             variants={linksVariants}
             initial="hidden"
             animate="visible"
           >
-            {navLinks.map((link, index) => {
-              const isActive = location.pathname === link.path;
-
+            {links.map((link, index) => {
               return (
                 <Link
                   to={link.path}
                   key={index}
                   className={`mobile-nav__link ${
-                    isActive ? 'mobile-nav__link--current-page' : ''
+                    isActive(link) ? 'mobile-nav__link--current-page' : ''
                   }`}
-                  onClick={closeMenu}
+                  onClick={() => setMenuOpen(false)}
                 >
                   {link.title}
                 </Link>
@@ -70,27 +67,8 @@ export const MobileNavigation = () => {
             })}
           </motion.nav>
         )}
-        <span className="mobile-nav__toggle" onClick={toggleMenu}>
-          {menuOpen ? 'ZAVŘÍT' : 'MENU'}
-        </span>
-      </motion.div>
-    </AnimatePresence>
+        <MenuToggle toggle={() => setMenuOpen(!menuOpen)} />
+      </motion.nav>
+    </>
   );
 };
-
-// const menuVariants = {
-//   hidden: {
-//     y: '100vh',
-//   },
-//   visible: {
-//     y: 0,
-//     transition: {
-//       type: 'tween',
-//       duration: 0.4,
-//       when: 'beforeChildren',
-//     },
-//   },
-//   exit: {
-//     y: '100vh',
-//   },
-// };

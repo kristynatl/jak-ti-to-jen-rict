@@ -22,14 +22,6 @@ export const IntroIllustration = () => {
   return (
     <div className="animation-container">
       <motion.img
-        // variants={bubbleVariants}
-        // initial="visible"
-        // animate="hidden"
-        className="intro__bubble"
-        src="img/bubble.png"
-      />
-
-      <motion.img
         style={scrollValueStyle}
         // variants={leftFigureVariants}
         // initial={scrollValue < 0.3 ? 'centered' : 'moved'}
