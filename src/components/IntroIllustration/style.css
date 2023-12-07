@@ -21,7 +21,7 @@
 
   left: 0;
   bottom: 12%;
-  transform: translateX(-45%);
+  transform: translateX(-50%);
 }
 
 .intro__figure--right {
@@ -58,7 +58,7 @@
   to {
     left: 0;
     bottom: 12%;
-    transform: translateX(-45%);
+    transform: translateX(-50%);
   }
 }
 
