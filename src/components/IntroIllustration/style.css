@@ -64,13 +64,18 @@
 
 @media screen and (min-width: 420px) {
   .intro__figure {
-    max-height: 360px;
+    max-height: 300px;
   }
 }
 
-@media screen and (min-width: 620px) {
+@media screen and (min-width: 1024px) {
   .intro__figure {
     max-height: 450px;
+  }
+
+  .intro__figure--left,
+  .intro__figure--right {
+    bottom: 5%;
   }
 }
 
@@ -90,7 +95,7 @@
 
     to {
       right: 0;
-      bottom: 12%;
+      bottom: 5%;
       transform: translateX(0);
     }
   }
@@ -104,7 +109,45 @@
 
     to {
       left: 0;
-      bottom: 12%;
+      bottom: 5%;
+      transform: translateX(0);
+    }
+  }
+}
+
+@media screen and (min-width: 1700px) {
+  .intro__figure--left {
+    left: 50px
+  }
+
+  .intro__figure--right {
+    right: 50px
+  }
+
+  @keyframes move-right {
+    from {
+      right: 50%;
+      bottom: 50%;
+      transform: translate(100%, 50%);
+    }
+
+    to {
+      right: 50px;
+      bottom: 5%;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes move-left {
+    from {
+      left: 50%;
+      bottom: 50%;
+      transform: translate(-100%, 50%);
+    }
+
+    to {
+      left: 50px;
+      bottom: 5%;
       transform: translateX(0);
     }
   }

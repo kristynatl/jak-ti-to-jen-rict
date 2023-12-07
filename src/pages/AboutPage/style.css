@@ -10,7 +10,7 @@
 .about__figure--left {
   left: 0;
   bottom: 12%;
-  transform: translateX(-45%);
+  transform: translateX(-50%);
 }
 
 .about__figure--right {
@@ -21,13 +21,18 @@
 
 @media screen and (min-width: 420px) {
   .about__figure {
-    max-height: 360px;
+    max-height: 300px;
   }
 }
 
-@media screen and (min-width: 620px) {
+@media screen and (min-width: 1024px) {
   .about__figure {
     max-height: 450px;
+  }
+
+  .about__figure--left,
+  .about__figure--right {
+    bottom: 5%;
   }
 }
 
@@ -36,5 +41,15 @@
   .about__figure--left,
   .about__figure--right {
     transform: translateX(0);
+  }
+}
+
+@media screen and (min-width: 1700px) {
+  .about__figure--left {
+    left: 50px
+  }
+
+  .about__figure--right {
+    right: 50px
   }
 }
