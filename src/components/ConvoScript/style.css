@@ -1,8 +1,9 @@
+/* Styles for the header */
+
 .script__header {
   background-color: white;
   width: 100vw;
   display: flex;
-  /* flex-direction: column; */
   flex-wrap: wrap;
   align-items: center;
   justify-content: start;
@@ -39,6 +40,8 @@
   }
 }
 
+/* Styles for the progress bar */
+
 .script__progress-bar {
   width: 100%;
   border-top: 1px solid black;
@@ -60,6 +63,8 @@
   margin-right: 1rem;
   text-align: right;
 }
+
+/* Styles for the script */
 
 .convo__bubble {
   width: 240px;
@@ -117,40 +122,58 @@
   background: #C7E9B2;
 }
 
+/* Styles for the images */
+
 .convo__figure {
-  max-height: 200px;
+  max-height: 250px;
   max-width: 35vw;
   position: fixed;
-  bottom: 12%;
+  bottom: 0;
 }
 
 .convo__figure--left {
+  left: 0;
+  bottom: 12%;
   transform: translateX(-50%);
 }
 
 .convo__figure--right {
   right: 0;
+  bottom: 12%;
   transform: translateX(50%);
 }
 
-@media screen and (min-width: 550px) {
+@media screen and (min-width: 420px) {
   .convo__figure {
     max-height: 300px;
-    max-width: 40vw;
-    position: fixed;
-    bottom: 45px;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .convo__figure {
-    bottom: 20%;
-    max-height: 400px;
+    max-height: 450px;
+  }
+
+  .convo__figure--left,
+  .convo__figure--right {
+    bottom: 5%;
   }
 }
 
 @media screen and (min-width: 1400px) {
-  .convo__figure {
+
+  .convo__figure--left,
+  .convo__figure--right {
     transform: translateX(0);
+  }
+}
+
+@media screen and (min-width: 1700px) {
+  .convo__figure--left {
+    left: 50px
+  }
+
+  .convo__figure--right {
+    right: 50px
   }
 }

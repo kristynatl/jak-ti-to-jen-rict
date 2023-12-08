@@ -1,8 +1,10 @@
 import './style.css';
+
+import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
+
 import { MenuToggle } from '../MenuToggle';
-import { useState } from 'react';
 
 export const MobileNavigation = ({ links }) => {
   const location = useLocation();

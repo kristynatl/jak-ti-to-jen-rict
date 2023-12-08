@@ -1,6 +1,7 @@
 import './style.css';
-import { motion } from 'framer-motion';
+
 import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
 export const IntroIllustration = () => {
   const [scrollValue, setScrollValue] = useState(null);

@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom';
 import './style.css';
+
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 export const AgeGroup = ({ age, src, alt, path }) => {

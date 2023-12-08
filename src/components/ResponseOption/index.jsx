@@ -1,4 +1,5 @@
 import './style.css';
+
 import { motion } from 'framer-motion';
 
 export const ResponseOption = ({ order, response, onClick }) => {

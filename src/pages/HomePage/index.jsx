@@ -146,7 +146,7 @@ export const HomePage = () => {
           </p>
           <p className="content-section__text">
             Jednou takovou je i kniha <em>Děti to chtěj vědět taky</em> od
-            autorek Dagmar Krišové a Marcely Poláčkové, vydané organizací
+            autorek Dagmar Krišové a Marcely Poláčkové, vydaná organizací
             Konsent v roce 2022 –⁠ je plná rad, inspirace, odborných a ověřených
             informací, osobních výpovědí a ukázek konverzací. Kniha bojuje s
             přetrvávajícími mýty a předsudky a povzbuzuje všechny dospěláky, aby

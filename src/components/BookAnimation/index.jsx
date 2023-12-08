@@ -1,5 +1,6 @@
 import './style.css';
-import { motion, useAnimationControls } from 'framer-motion';
+
+import { motion } from 'framer-motion';
 
 export const BookAnimation = () => {
   const imageFadeOutVariants = {

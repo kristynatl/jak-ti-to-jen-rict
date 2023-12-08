@@ -1,4 +1,5 @@
 import './style.css';
+
 import { useLocation } from 'react-router';
 
 export const MobileTopPanel = ({ links }) => {

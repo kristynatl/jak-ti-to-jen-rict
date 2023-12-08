@@ -1,14 +1,15 @@
 import './style.css';
+
+import { Fragment, useState, useRef, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+
+import { ageGroups } from '../../data/ageGroups';
+
 import { ResponseOption } from '../ResponseOption';
 import { ActionButton } from '../ActionButton';
 import { HistoryExchange } from '../HistoryExchange';
-import { ageGroups } from '../../data/ageGroups';
-import { useParams } from 'react-router';
-import { Fragment, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { useRef, useEffect } from 'react';
-import { useNavigate } from 'react-router';
 
 export const ConvoScript = () => {
   const { vek, scenar } = useParams();

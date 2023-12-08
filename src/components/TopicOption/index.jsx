@@ -1,6 +1,7 @@
 import './style.css';
-import { motion } from 'framer-motion';
+
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 export const TopicOption = ({ topic, order, path, state }) => {
   const buttonVariants = {

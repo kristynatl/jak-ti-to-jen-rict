@@ -1,6 +1,8 @@
 import './style.css';
-import { AgeGroup } from '../AgeGroup';
+
 import { ageGroups } from '../../data/ageGroups';
+
+import { AgeGroup } from '../AgeGroup';
 
 export const ChooseAge = () => {
   return (

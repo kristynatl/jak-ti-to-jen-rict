@@ -1,8 +1,11 @@
-import { Link } from 'react-router-dom';
 import './style.css';
+
 import { useParams } from 'react-router';
-import { TopicOption } from '../TopicOption';
+import { Link } from 'react-router-dom';
+
 import { ageGroups } from '../../data/ageGroups';
+
+import { TopicOption } from '../TopicOption';
 
 export const ChooseConvo = () => {
   const { vek } = useParams();
@@ -31,7 +34,6 @@ export const ChooseConvo = () => {
           <p className="back__text">zpět na výběr věkové kategorie</p>
         </Link>
         <h2 className="selected-age__age">{ageGroupData.text}</h2>
-        {/* <span className="content-section__underline" /> */}
       </div>
       <div className="container container--margin">
         <div className="content-section">
