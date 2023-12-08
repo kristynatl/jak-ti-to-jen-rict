@@ -104,7 +104,7 @@ export const ConvoScript = () => {
           ></motion.div>
         </div>
       </div>
-      <div className="container">
+      <div className="script__container">
         {resolvedConvo.map((exchange, index) => {
           return (
             <HistoryExchange

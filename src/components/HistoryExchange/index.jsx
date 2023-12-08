@@ -1,4 +1,7 @@
+import './style.css';
+
 import { Fragment } from 'react';
+
 import { ConvoBubble } from '../ConvoBubble';
 import { ResponseFeedback } from '../ResponseFeedback';
 
@@ -13,7 +16,7 @@ export const HistoryExchange = ({
   );
 
   return (
-    <>
+    <div className="exchange">
       <ConvoBubble
         scrollRef={scrollRef}
         speaker="child"
@@ -48,6 +51,6 @@ export const HistoryExchange = ({
           <ResponseFeedback status="true" content={correctAnswer.feedback} />
         </>
       )}
-    </>
+    </div>
   );
 };

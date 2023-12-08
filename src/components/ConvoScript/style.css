@@ -66,8 +66,19 @@
 
 /* Styles for the script */
 
+.script__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  scroll-margin-top: 100px;
+  padding: 0 18%;
+  margin-top: 50vh;
+  margin-bottom: 50px;
+}
+
 .convo__bubble {
-  width: 240px;
+  width: 200px;
   height: auto;
   display: block;
   background: #FFF;
@@ -76,12 +87,13 @@
   font-family: 'Alumni sans', sans-serif;
   font-size: x-large;
   position: relative;
-  scroll-margin-top: 180px;
+  scroll-margin-top: 160px;
 }
 
 .child {
   align-self: start;
   border-radius: 20px 20px 20px 0;
+  margin-left: 5px
 }
 
 .neutral {
@@ -92,6 +104,7 @@
   align-self: end;
   border-radius: 20px 20px 0 20px;
   text-align: right;
+  margin-right: 5px;
 }
 
 .incorrect {
