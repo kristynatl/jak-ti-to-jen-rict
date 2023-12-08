@@ -25,6 +25,7 @@
 
 @media screen and (min-width: 769px) {
   .script__header {
+    border-bottom: 1px solid black;
     filter: none;
     max-width: 800px;
     justify-content: space-between;
@@ -44,7 +45,6 @@
 
 .script__progress-bar {
   width: 100%;
-  border-top: 1px solid black;
   display: flex;
   flex-direction: column;
   align-items: end;

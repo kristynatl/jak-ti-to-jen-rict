@@ -2,6 +2,7 @@
   background: white;
   box-shadow: 3px 4px 10px 0px rgba(0, 0, 0, 0.25);
   border: 1px solid #D35F5F;
+  border-radius: 7px;
   font-family: 'Alumni Sans', sans-serif;
   max-width: 350px;
   font-size: x-large;
@@ -12,18 +13,31 @@
   width: 90%;
 }
 
-.response__option span {
-  color: #D35F5F;
-}
+@media screen and (min-width:769px) {
+  .response__option {
+    max-width: 500px;
+    border: none;
+    font-size: xx-large;
+  }
 
-.response__option:hover,
-.response__option:focus {
-  color: white;
-  background: #D35F5F;
-}
+  .response__option:hover,
+  .response__option:focus {
+    color: white;
+    background: #D35F5F;
+  }
 
-.response__option:active {
-  color: white;
-  background: black;
-  border: 1px solid black;
+  .response__option:active {
+    color: white;
+    background: black;
+    border: 1px solid black;
+  }
+
+  .response__option span {
+    color: #D35F5F;
+  }
+
+  .response__option:hover span,
+  .response__option:focus span {
+    color: white;
+  }
 }
