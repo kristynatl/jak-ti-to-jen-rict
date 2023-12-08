@@ -17,7 +17,7 @@
   .response__option {
     max-width: 500px;
     border: none;
-    font-size: xx-large;
+    font-size: 1.7rem;
   }
 
   .response__option:hover,
