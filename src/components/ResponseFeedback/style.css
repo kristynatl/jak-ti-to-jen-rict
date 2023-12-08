@@ -1,0 +1,24 @@
+.convo__feedback {
+  font-family: 'Alumni sans', sans-serif;
+  font-size: x-large;
+  text-align: center;
+  box-shadow: 3px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 1.5rem;
+  width: 90%;
+  margin: 0 0 35px;
+}
+
+.false {
+  background: #FFD2D2;
+}
+
+.true {
+  background: #C7E9B2;
+}
+
+@media screen and (min-width: 769px) {
+  .convo__feedback {
+    max-width: 500px;
+    align-self: end;
+  }
+}

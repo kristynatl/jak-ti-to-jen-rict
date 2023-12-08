@@ -1,3 +1,5 @@
+import './style.css';
+
 import { motion } from 'framer-motion';
 
 export const ConvoBubble = ({ speaker, status, content, scrollRef }) => {
