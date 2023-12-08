@@ -14,16 +14,16 @@ export const AgeGroup = ({ age, src, alt, path }) => {
   };
 
   return (
-    <motion.button
-      className="age-group"
-      variants={buttonVariants}
-      whileHover="hover"
-      whileTap="active"
-    >
-      <Link to={path} className="age-group__link">
-        <h2 className="age-group__age">{age}</h2>
-      </Link>
-      <img className="age-group__image" src={src} alt={alt} />
-    </motion.button>
+    <Link to={path} className="age-group__link">
+      <motion.button
+        className="age-group"
+        variants={buttonVariants}
+        whileHover="hover"
+        whileTap="active"
+      >
+        <h2 className="age-group__age">{age}</h2>{' '}
+        <img className="age-group__image" src={src} alt={alt} />
+      </motion.button>
+    </Link>
   );
 };
