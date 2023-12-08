@@ -6,5 +6,10 @@
   max-width: 500px;
   gap: 3rem;
   margin-top: 1.5rem;
+}
 
+@media screen and (min-width: 1024px) {
+  .ages {
+    gap: 4rem
+  }
 }

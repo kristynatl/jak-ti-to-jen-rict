@@ -16,15 +16,15 @@ export const TopicOption = ({ topic, order, path, state }) => {
   console.log(topic, state);
 
   return (
-    <motion.button
-      variants={buttonVariants}
-      whileHover="hover"
-      whileTap="active"
-      className="choose-convo__option"
-    >
-      <Link to={path} className="">
+    <Link to={path} className="topic-option__link">
+      <motion.button
+        variants={buttonVariants}
+        whileHover="hover"
+        whileTap="active"
+        className="topic-option"
+      >
         {order}. {topic}
-      </Link>
-    </motion.button>
+      </motion.button>
+    </Link>
   );
 };

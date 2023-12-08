@@ -1,28 +1,49 @@
-.choose-convo__option {
+.topic-option {
   color: #D35F5F;
   border: 1px solid #D35F5F;
+  border-radius: 7px;
   background: white;
   box-shadow: 3px 4px 10px 0px rgba(0, 0, 0, 0.25);
   border: 1px solid #D35F5F;
   font-family: 'Bebas Neue', sans-serif;
-  max-width: 350px;
+  width: 100%;
+  max-width: 500px;
   font-size: x-large;
   text-align: left;
-  padding: 0.5rem 0 0.5rem 1rem;
+  padding: 1rem 0.5rem;
   color: #D35F5F;
-  margin: 1rem;
   letter-spacing: 1px;
-  width: 90%;
+  cursor: pointer;
 }
 
-.choose-convo__option:hover,
-.choose-convo__option:focus {
-  color: white;
-  background: #D35F5F;
+.topic-option__link {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px;
 }
 
-.choose-convo__option:active {
-  color: white;
-  background: black;
-  border: 1px solid black;
+@media screen and (min-width: 770px) {
+  .topic-option {
+    padding-left: 1rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .topic-option {
+    border: none;
+  }
+
+  .topic-option:hover,
+  .topic-option:focus {
+    color: white;
+    background: #D35F5F;
+  }
+
+  .topic-option:active {
+    color: white;
+    background: black;
+    border: 1px solid black;
+  }
 }

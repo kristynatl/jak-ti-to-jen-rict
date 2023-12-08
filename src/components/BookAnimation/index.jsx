@@ -29,13 +29,13 @@ export const BookAnimation = () => {
   };
 
   return (
-    <div className="how-to__book-container">
+    <div className="book-animation">
       <motion.img
         variants={imageFadeOutVariants}
         initial="visible"
         whileInView="hidden"
         exit="exit"
-        className="how-to__book fade-out"
+        className="book-animation__book book-animation__book--fade-out"
         src="/img/book.png"
         alt="kniha Děti to chtěj vědět taky"
       />
@@ -43,7 +43,7 @@ export const BookAnimation = () => {
         variants={imageFadeInVariants}
         initial="hidden"
         whileInView="visible"
-        className="how-to__book"
+        className="book-animation__book"
         src="/img/book-hover.png"
         alt="kniha Děti to chtěj vědět taky"
       />

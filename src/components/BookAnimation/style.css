@@ -1,26 +1,26 @@
-.how-to__book-container {
+.book-animation {
   position: relative;
   height: 250px;
   margin: 1rem 0;
 }
 
-.how-to__book {
+.book-animation__book {
   max-height: 250px;
   transform: translateX(-50%);
   position: absolute;
 }
 
-.fade-out {
+.book-animation__book--fade-out {
   opacity: 0;
 }
 
 @media screen and (min-width: 770px) {
-  .how-to__book-container {
+  .book-animation {
     margin: 3rem 0;
     height: 400px;
   }
 
-  .how-to__book {
+  .book-animation__book {
     max-height: 400px;
   }
 }
