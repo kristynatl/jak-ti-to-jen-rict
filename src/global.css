@@ -25,22 +25,42 @@ body {
 .back {
   color: black;
   text-decoration: none;
-  align-self: start;
+  align-self: center;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  margin: 1rem 0 0 0;
 }
 
 .back__icon {
   height: 20px;
+  margin-left: 1rem;
 }
 
-@media screen and (min-width: 770px) {
+.back__text {
+  display: none;
+}
+
+@media screen and (min-width: 769px) {
+  .back {
+    margin-top: 0;
+  }
+
+  .back__text {
+    display: inline;
+    font-family: 'Alumni Sans', sans-serif;
+    font-size: x-large;
+    text-align: justify;
+    margin: 1rem 0.5rem 2rem 0;
+  }
+
+  .back__icon {
+    margin: 1rem 0 2rem 1rem;
+  }
 
   .link:hover,
   .link:focus {
     color: white;
-
   }
 
   .link:active {
@@ -113,7 +133,7 @@ body {
   .content-section__heading {
     font-size: xx-large;
     align-self: start;
-    margin-top: 3rem;
+    margin: 3rem 0;
   }
 }
 

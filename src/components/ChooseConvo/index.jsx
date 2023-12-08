@@ -24,38 +24,40 @@ export const ChooseConvo = () => {
   };
 
   return (
-    <div className="container">
-      <div className="content-section">
+    <>
+      <div className="topics__header">
         <Link to="/nacvik-rozhovoru" className="back">
           <img src="/img/back-icon.png" className="back__icon" />
-          <p className="content-section__text">
-            zpět na výběr věkové kategorie
-          </p>
+          <p className="back__text">zpět na výběr věkové kategorie</p>
         </Link>
-        <img
-          className="selected-age__image"
-          src={ageGroupData.src}
-          alt={ageGroupData.alt}
-        />
         <h2 className="selected-age__age">{ageGroupData.text}</h2>
-        <span className="content-section__underline" />
-        <h1 className="content-section__heading center">
-          Vyberte jeden z následujících scénářů:
-        </h1>
+        {/* <span className="content-section__underline" /> */}
       </div>
-      <div className="content-section topics-list">
-        {ageGroupData.convos.map((convo, index) => {
-          return (
-            <TopicOption
-              state={getConvoState(convo)}
-              key={index}
-              order={index + 1}
-              topic={convo.topic}
-              path={convo.id}
-            />
-          );
-        })}
+      <div className="container container--margin">
+        <div className="content-section">
+          <img
+            className="selected-age__image"
+            src={ageGroupData.src}
+            alt={ageGroupData.alt}
+          />
+          <h1 className="content-section__heading center">
+            Vyberte jeden z následujících scénářů:
+          </h1>
+        </div>
+        <div className="content-section topics-list">
+          {ageGroupData.convos.map((convo, index) => {
+            return (
+              <TopicOption
+                state={getConvoState(convo)}
+                key={index}
+                order={index + 1}
+                topic={convo.topic}
+                path={convo.id}
+              />
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </>
   );
 };

@@ -86,24 +86,24 @@ export const ConvoScript = () => {
 
   return (
     <>
-      <div className="convo-script">
+      <div className="script__header">
         <Link to={`/nacvik-rozhovoru/${vek}`} className="back">
-          <span>&#8249;</span>
-          <p>zpět na výběr scénáře</p>
+          <img src="/img/back-icon.png" className="back__icon" />
+          <p className="back__text">zpět na výběr scénáře</p>
         </Link>
-        <div className="convo-script__header">
-          <h2>{convoData.topic}</h2>
-          <div className="convo-script__progress-bar">
-            <motion.div
-              variants={progressVariants}
-              animate="progress"
-              className="convo-script__progress-fill"
-            ></motion.div>
-            <p className="convo-script__progress">
-              {resolvedConvo.length}/{script.length}
-            </p>
-          </div>
+        <h2 className="script__heading">{convoData.topic}</h2>
+        <p className="script__progress-value">
+          {resolvedConvo.length}/{script.length}
+        </p>
+        <div className="script__progress-bar">
+          <motion.div
+            variants={progressVariants}
+            animate="progress"
+            className="script__progress-fill"
+          ></motion.div>
         </div>
+      </div>
+      <div className="container">
         {resolvedConvo.map((exchange, index) => {
           return (
             <HistoryExchange
