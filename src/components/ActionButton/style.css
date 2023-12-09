@@ -10,7 +10,6 @@
   letter-spacing: 1px;
   width: 75%;
   cursor: pointer;
-  border-radius: 7px;
   max-width: 250px;
 }
 
@@ -20,7 +19,7 @@
   }
 }
 
-@media screen and (min-width: 770px) {
+@media screen and (min-width: 1024px) {
   .action-button {
     border: none;
     font-size: xx-large;
