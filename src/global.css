@@ -41,6 +41,12 @@ body {
   display: none;
 }
 
+@media screen and (min-width: 769px) {
+  .back__text {
+    display: inline;
+  }
+}
+
 
 /* General content styles */
 
