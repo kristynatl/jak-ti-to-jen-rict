@@ -23,6 +23,12 @@
   margin: 1rem 0 0 1.5rem;
 }
 
+@media screen and (min-width: 550px) {
+  .script__heading {
+    font-size: xx-large;
+  }
+}
+
 @media screen and (min-width: 769px) {
   .script__header {
     border-bottom: 1px solid black;
@@ -35,7 +41,6 @@
   }
 
   .script__heading {
-    font-size: xx-large;
     margin-bottom: 2rem;
     margin-right: 1rem;
   }
@@ -137,5 +142,19 @@
 
   .convo__figure--right {
     right: 50px
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .script__header {
+    position: static;
+    max-width: 100vw;
+    margin-left: 0;
+    margin-top: 60px;
+  }
+
+  .convo__figure {
+    max-height: 50%;
+    bottom: 10%;
   }
 }

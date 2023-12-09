@@ -41,6 +41,12 @@ body {
   display: none;
 }
 
+@media screen and (orientation: landscape) {
+  .intro__figure {
+    max-height: 50%;
+  }
+}
+
 @media screen and (min-width: 769px) {
   .back {
     margin-top: 0;

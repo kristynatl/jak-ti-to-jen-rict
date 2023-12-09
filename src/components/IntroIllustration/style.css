@@ -124,6 +124,12 @@
     right: 50px
   }
 
+  @media screen and (orientation: landscape) {
+    .intro__figure {
+      max-height: 50%;
+    }
+  }
+
   @keyframes move-right {
     from {
       right: 50%;
@@ -160,11 +166,12 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  bottom: 25%;
+  bottom: 20%;
   left: 50%;
   animation: fade-out 1s linear;
   animation-play-state: paused;
   animation-delay: calc(var(--scroll) * -1s);
+  transform: rotate(180deg);
 }
 
 @keyframes fade-out {
@@ -237,5 +244,18 @@
   100% {
     opacity: 0;
     transform: translateY(4.2rem) scale(0.5);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .scroll-indicator {
+    transform: rotate(0);
+    bottom: 25%;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .scroll-indicator {
+    bottom: 10%
   }
 }

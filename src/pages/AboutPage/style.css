@@ -57,3 +57,9 @@
 .space-filler {
   height: 200px;
 }
+
+@media screen and (orientation: landscape) {
+  .about__figure {
+    max-height: 50%;
+  }
+}

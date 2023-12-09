@@ -29,6 +29,12 @@
   margin: 1rem 0 0 1.5rem;
 }
 
+@media screen and (min-width: 550px) {
+  .selected-age__age {
+    font-size: xx-large;
+  }
+}
+
 @media screen and (min-width: 769px) {
   .topics__header {
     filter: none;
@@ -45,12 +51,6 @@
     font-size: xx-large;
     margin-bottom: 2rem;
     margin-right: 1rem;
-  }
-}
-
-@media screen and (min-width: 550px) {
-  .selected-age__age {
-    font-size: xx-large;
   }
 }
 
