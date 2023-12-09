@@ -9,10 +9,30 @@
   max-width: 500px;
   font-size: x-large;
   text-align: left;
-  padding: 1rem 0.5rem;
+  padding: 1rem 1rem;
   color: #D35F5F;
   letter-spacing: 1px;
   cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topic-option--finished {
+  color: #358b00;
+  border: 1px solid #358b00;
+}
+
+.inProgress {
+  display: none;
+}
+
+.notStarted {
+  display: none;
+}
+
+.finished {
+  width: 20px;
 }
 
 .topic-option__link {

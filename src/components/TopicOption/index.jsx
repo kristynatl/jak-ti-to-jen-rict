@@ -22,9 +22,10 @@ export const TopicOption = ({ topic, order, path, state }) => {
         variants={buttonVariants}
         whileHover="hover"
         whileTap="active"
-        className="topic-option"
+        className={`topic-option topic-option--${state}`}
       >
         {order}. {topic}
+        <img src="/img/finished-icon.png" className={state} />
       </motion.button>
     </Link>
   );
