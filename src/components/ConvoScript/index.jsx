@@ -23,6 +23,7 @@ export const ConvoScript = () => {
   const [resolvedConvo, setResolvedConvo] = useState(initialConvo);
   const [action, setAction] = useState(null);
   const [currentOptions, setCurrentOptions] = useState([]);
+  const [reset, setReset] = useState(false);
 
   console.log(action);
 
@@ -47,6 +48,19 @@ export const ConvoScript = () => {
       setAction('finish');
     }
   }, []);
+
+  useEffect(() => {
+    if (reset) {
+      setResolvedConvo([]);
+      setAction(null);
+      setCurrentOptions([]);
+      setReset(false);
+    }
+
+    // else {
+    //   localStorage.setItem(scenar, JSON.stringify(resolvedConvo));
+    // }
+  }, [reset]);
 
   const showResponses = () => {
     setAction('showOptions');
@@ -77,6 +91,11 @@ export const ConvoScript = () => {
       setAction(null);
       setCurrentOptions([]);
     }
+  };
+
+  const handleReset = () => {
+    localStorage.removeItem(scenar);
+    setReset(true);
   };
 
   const progressVariants = {
@@ -171,6 +190,10 @@ export const ConvoScript = () => {
               </Fragment>
             );
           })
+        )}
+
+        {action === 'finish' && (
+          <ActionButton label="Zopakovat si tento" onClick={handleReset} />
         )}
       </div>
 
