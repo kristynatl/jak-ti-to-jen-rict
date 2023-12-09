@@ -25,15 +25,9 @@ export const ConvoScript = () => {
   const [currentOptions, setCurrentOptions] = useState([]);
   const [reset, setReset] = useState(false);
 
-  console.log(action);
-
   const scrollOnRevealRef = useRef(null);
 
   const navigate = useNavigate();
-
-  const scrollOnReveal = () => {
-    scrollOnRevealRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
 
   useEffect(() => {
     scrollOnReveal();
@@ -54,13 +48,12 @@ export const ConvoScript = () => {
       setResolvedConvo([]);
       setAction(null);
       setCurrentOptions([]);
-      setReset(false);
     }
-
-    // else {
-    //   localStorage.setItem(scenar, JSON.stringify(resolvedConvo));
-    // }
   }, [reset]);
+
+  const scrollOnReveal = () => {
+    scrollOnRevealRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   const showResponses = () => {
     setAction('showOptions');

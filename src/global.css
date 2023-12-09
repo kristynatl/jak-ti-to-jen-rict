@@ -41,38 +41,6 @@ body {
   display: none;
 }
 
-@media screen and (orientation: landscape) {
-  .intro__figure {
-    max-height: 50%;
-  }
-}
-
-@media screen and (min-width: 769px) {
-  .back {
-    margin-top: 0;
-  }
-
-  .back__text {
-    display: inline;
-    font-family: 'Alumni Sans', sans-serif;
-    font-size: x-large;
-    text-align: justify;
-    margin: 1rem 0.5rem 2rem 0;
-  }
-
-  .back__icon {
-    margin: 1rem 0 2rem 1rem;
-  }
-
-  .link:hover,
-  .link:focus {
-    color: white;
-  }
-
-  .link:active {
-    color: white;
-  }
-}
 
 /* General content styles */
 
