@@ -41,12 +41,11 @@ export const HomePage = () => {
             na rozhovor s dětmi o intimitě a respektování osobních hranic
           </p>
           <div className="intro-buttons">
+            <ActionButton label="ZKUSIT SI ROZHOVOR" onClick={handleNavigate} />
             <ActionButton
               label="PŘEČÍST SI JAK NA TO"
               onClick={scrollOnClick}
             />
-
-            <ActionButton label="ZKUSIT SI ROZHOVOR" onClick={handleNavigate} />
           </div>
         </motion.div>
       </div>
