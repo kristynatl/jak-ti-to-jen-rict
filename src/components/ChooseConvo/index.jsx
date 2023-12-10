@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import { ageGroups } from '../../data/ageGroups';
 
 import { TopicOption } from '../TopicOption';
-import { useState } from 'react';
 
 export const ChooseConvo = () => {
   const { vek } = useParams();
@@ -60,6 +59,10 @@ export const ChooseConvo = () => {
             );
           })}
         </div>
+        <p className="content-section__text">
+          Na {ageGroupData.convos.length !== 0 ? 'dalších' : ''} scénářích pro
+          tuto kategorii se ještě pracuje.
+        </p>
       </div>
     </>
   );
