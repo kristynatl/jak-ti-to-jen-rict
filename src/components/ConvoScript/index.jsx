@@ -100,11 +100,13 @@ export const ConvoScript = () => {
   return (
     <>
       <div className="script__header">
-        <Link to={`/nacvik-rozhovoru/${vek}`} className="back">
-          <img src="/img/back-icon.png" className="back__icon" />
-          <p className="back__text">zpět na výběr scénáře</p>
-        </Link>
-        <h2 className="script__heading">{convoData.topic}</h2>
+        <div className="script__back-section">
+          <Link to={`/nacvik-rozhovoru/${vek}`} className="back">
+            <img src="/img/back-icon.png" className="back__icon" />
+            <p className="back__text">zpět na výběr scénáře</p>
+          </Link>
+          <h2 className="script__heading">{convoData.topic}</h2>
+        </div>
         <p className="script__progress-value">
           {resolvedConvo.length}/{script.length}
         </p>
