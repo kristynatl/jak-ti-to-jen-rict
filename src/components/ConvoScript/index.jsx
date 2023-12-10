@@ -169,26 +169,29 @@ export const ConvoScript = () => {
             ) : null}
           </>
         ) : (
-          script[resolvedConvo.length].responses.map((resp, index) => {
-            if (currentOptions.includes(index)) {
-              return null;
-            }
+          <>
+            <div ref={scrollOnRevealRef} className="scroll-element" />
+            {script[resolvedConvo.length].responses.map((resp, index) => {
+              if (currentOptions.includes(index)) {
+                return null;
+              }
 
-            return (
-              <Fragment key={index}>
-                {index === 0 && (
-                  <div ref={scrollOnRevealRef} className="scroll-element" />
-                )}
-                <ResponseOption
-                  order={index + 1}
-                  response={resp.response}
-                  onClick={() => {
-                    selectResponse(index, resp.correct);
-                  }}
-                />
-              </Fragment>
-            );
-          })
+              return (
+                <Fragment key={index}>
+                  {index === 0 && (
+                    <div ref={scrollOnRevealRef} className="scroll-element" />
+                  )}
+                  <ResponseOption
+                    order={index + 1}
+                    response={resp.response}
+                    onClick={() => {
+                      selectResponse(index, resp.correct);
+                    }}
+                  />
+                </Fragment>
+              );
+            })}
+          </>
         )}
 
         {action === 'finish' && (
