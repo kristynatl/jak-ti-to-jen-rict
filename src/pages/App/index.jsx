@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Outlet } from 'react-router';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useMatch } from 'react-router-dom';
 
 import { DesktopNavigation } from '../../components/DesktopNavigation';
 import { MobileNavigation } from '../../components/MobileNavigation';
@@ -13,9 +13,12 @@ const navLinks = [
 
 export const App = () => {
   const { pathname } = useLocation();
+  const convoScriptMatch = useMatch('/nacvik-rozhovoru/:vek/:scenar');
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (!convoScriptMatch) {
+      window.scrollTo(0, 0);
+    }
   }, [pathname]);
 
   return (

@@ -14,8 +14,6 @@ export const TopicOption = ({ topic, order, path, state }) => {
     },
   };
 
-  console.log(topic, state);
-
   return (
     <Link to={path} className="topic-option__link">
       <motion.button
