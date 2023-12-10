@@ -26,8 +26,6 @@ export const ConvoScript = () => {
   const [reset, setReset] = useState(false);
   const [shouldScrollOnTryAgain, setShouldScrollOnTryAgain] = useState(true);
 
-  console.log(shouldScrollOnTryAgain, action);
-
   const scrollOnRevealRef = useRef(null);
 
   const navigate = useNavigate();
