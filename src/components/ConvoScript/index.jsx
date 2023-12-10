@@ -24,6 +24,9 @@ export const ConvoScript = () => {
   const [action, setAction] = useState(null);
   const [currentOptions, setCurrentOptions] = useState([]);
   const [reset, setReset] = useState(false);
+  const [shouldScrollOnTryAgain, setShouldScrollOnTryAgain] = useState(true);
+
+  console.log(shouldScrollOnTryAgain, action);
 
   const scrollOnRevealRef = useRef(null);
 
@@ -79,6 +82,7 @@ export const ConvoScript = () => {
     if (resolvedConvo.length + 1 === script.length) {
       setAction('finish');
       setResolvedConvo([...resolvedConvo, currentOptions]);
+      setShouldScrollOnTryAgain(false);
     } else {
       setResolvedConvo([...resolvedConvo, currentOptions]);
       setAction(null);
@@ -190,7 +194,11 @@ export const ConvoScript = () => {
         )}
 
         {action === 'finish' && (
-          <ActionButton label="Opakovat" onClick={handleReset} />
+          <ActionButton
+            scrollRef={shouldScrollOnTryAgain ? scrollOnRevealRef : null}
+            label="Opakovat"
+            onClick={handleReset}
+          />
         )}
       </div>
 

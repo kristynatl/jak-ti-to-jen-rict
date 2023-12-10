@@ -2,7 +2,7 @@ import './style.css';
 
 import { motion } from 'framer-motion';
 
-export const ActionButton = ({ label, onClick }) => {
+export const ActionButton = ({ label, onClick, scrollRef }) => {
   const buttonVariants = {
     hidden: {
       opacity: 0,
@@ -30,6 +30,7 @@ export const ActionButton = ({ label, onClick }) => {
       whileHover="hover"
       whileTap="active"
       className="action-button"
+      ref={scrollRef}
       onClick={onClick}
     >
       {label}
