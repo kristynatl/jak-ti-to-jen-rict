@@ -178,9 +178,6 @@ export const ConvoScript = () => {
 
               return (
                 <Fragment key={index}>
-                  {index === 0 && (
-                    <div ref={scrollOnRevealRef} className="scroll-element" />
-                  )}
                   <ResponseOption
                     order={index + 1}
                     response={resp.response}
