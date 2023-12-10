@@ -9,7 +9,6 @@
 
 .intro__figure {
   max-height: 250px;
-  max-width: 35vw;
   position: fixed;
   bottom: 0;
 }
@@ -21,7 +20,8 @@
 
   left: 0;
   bottom: 12%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) scale(1);
+  max-width: 35vw;
 }
 
 .intro__figure--right {
@@ -31,19 +31,22 @@
 
   right: 0;
   bottom: 12%;
-  transform: translateX(50%);
+  transform: translateX(50%) scale(1);
+  max-width: 35vw;
 }
 
 @keyframes move-right {
   from {
     right: 50%;
     bottom: 50%;
+    max-width: 48vw;
     transform: translate(100%, 50%);
   }
 
   to {
     right: 0;
     bottom: 12%;
+    max-width: 35vw;
     transform: translateX(50%);
   }
 }
@@ -52,12 +55,14 @@
   from {
     left: 50%;
     bottom: 50%;
+    max-width: 48vw;
     transform: translate(-100%, 50%);
   }
 
   to {
     left: 0;
     bottom: 12%;
+    max-width: 35vw;
     transform: translateX(-50%);
   }
 }

@@ -84,7 +84,6 @@
 }
 
 .mobile-nav__link--current-page {
-  /* color: black; */
   border-left: 2px solid black;
   color: black;
 }

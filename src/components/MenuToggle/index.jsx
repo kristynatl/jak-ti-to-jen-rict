@@ -12,8 +12,8 @@ const Path = (props) => (
 
 const menuVariants = {
   open: {
-    x: -20,
-    y: 25,
+    x: -15,
+    y: 20,
     width: '70vW',
     height: '100vh',
     borderRadius: 0,
