@@ -9,13 +9,13 @@
 
 .about__figure--left {
   left: 0;
-  bottom: 12%;
+  bottom: 14%;
   transform: translateX(-50%);
 }
 
 .about__figure--right {
   right: 0;
-  bottom: 12%;
+  bottom: 14%;
   transform: translateX(50%);
 }
 
