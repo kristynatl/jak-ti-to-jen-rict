@@ -253,9 +253,3 @@
     bottom: 25%;
   }
 }
-
-@media screen and (orientation: landscape) {
-  .scroll-indicator {
-    bottom: 10%
-  }
-}
