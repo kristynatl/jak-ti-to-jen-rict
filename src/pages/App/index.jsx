@@ -15,7 +15,7 @@ export const App = () => {
     <>
       <DesktopNavigation links={navLinks} />
       <Outlet />
-      <MobileTopPanel links={navLinks} />
+      {/* <MobileTopPanel links={navLinks} /> */}
       <MobileNavigation links={navLinks} />
     </>
   );
