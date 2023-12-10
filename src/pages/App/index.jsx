@@ -1,9 +1,8 @@
+import { useEffect } from 'react';
 import { Outlet } from 'react-router';
 import { useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
 
 import { DesktopNavigation } from '../../components/DesktopNavigation';
-import { MobileTopPanel } from '../../components/MobileTopPanel';
 import { MobileNavigation } from '../../components/MobileNavigation';
 
 const navLinks = [
@@ -23,7 +22,6 @@ export const App = () => {
     <>
       <DesktopNavigation links={navLinks} />
       <Outlet />
-      {/* <MobileTopPanel links={navLinks} /> */}
       <MobileNavigation links={navLinks} />
     </>
   );

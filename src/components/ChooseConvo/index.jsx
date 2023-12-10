@@ -36,7 +36,7 @@ export const ChooseConvo = () => {
         </Link>
         <h2 className="selected-age__age">{ageGroupData.text}</h2>
       </div>
-      <div className="container container--margin">
+      <div className="container">
         <div className="content-section">
           <img
             className="selected-age__image"
